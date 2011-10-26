@@ -1,0 +1,51 @@
+#wrapper-semestres{margin: 0 auto; width: 638px}
+#wrapper-semestres >.boxed{float:left; width: 295px; }
+#wrapper-semestres .box-componentes{
+	padding: 0; margin: auto;
+	width: 275px;
+}
+
+.box-date-semestre{padding: 15px 0}
+.box-date-semestre label{margin-left: 5px; font-weight: 900}
+
+#box-cursos_especiales{width:615px}
+
+#table-cuposCursos_wrapper{width: 250px; margin: 0 auto;}
+#table-cuposCursos input{width: 30px}
+
+.wrapper-programas-componentes{
+	width:300px; margin: auto;
+	border: #CCC solid 1px;  
+}
+
+ul.list-componentes{
+	vertical-align: middle;
+	padding-top: 3px; margin: 5px auto; 
+	padding-left: 5px;
+	-webkit-padding-start: 10px;
+}
+
+#wrapper-semestres .list-componentes-asignados{
+	min-height: 240px; 
+}
+
+.list-componentes-disponibles .item-list{
+	border: 1px solid #CCC; padding: 2px 0 2px 5px; margin: 2px;
+}
+.list-componentes-disponibles .item-list:hover{background-color: #CCC;}
+
+.widget-programas-componentes-edit{ margin: auto; width: 650px}
+.widget-programas-componentes-edit .wrapper-programas-componentes{float: left}
+
+.list-componentes-adicionados{
+	border-top: 4px double #888;
+}
+
+tfoot th.ui-state-error-text{ font-weight: bold; font-size: 11pt;}
+
+h3 .counter{
+    float: left; 
+    background-color:  lightGrey; 
+    padding: 1px 5px 1px 8px;
+    border-radius: 15px; -webkit-border-radius:15px; -moz-border-radius:15px
+}

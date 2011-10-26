@@ -1,0 +1,12 @@
+#wrapper-reporteCompetenciasPorCurso .header-widget{
+	padding:5px; font-size: 18pt; border: 1px solid #CCC
+}
+.cantidad-preguntas-correctas,
+.porcentaje-preguntas-correctas{
+  text-align: center;
+  padding: 5px 10px;
+}
+
+.header-row{font-size: 14pt}
+th.ui-state-default{border-bottom: double 3px #AAA}
+#table-competencias_estudiantes-individual{width:500px;}

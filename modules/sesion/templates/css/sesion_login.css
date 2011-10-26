@@ -1,0 +1,29 @@
+
+#container-tituloSIAT{visibility: hidden}
+#container-login{width:10cm;}
+#container-linkManual{background-color: #E5E5E5; margin: auto;padding: 0.5mm; width:8cm;}
+#form-login {margin: 1cm auto 5mm auto; width:370px}
+#form-login div.ui-field{text-align: center; margin: 3mm auto; font-size:12pt}
+#form-login div.ui-field label{width: 3cm; text-align: right}
+div.decorated{-moz-border-radius: 18px; -webkit-border-radius: 18px; border-radius: 18px; }
+#wrapper-login-panel{vertical-align: middle; padding-bottom: 130px}
+hr{margin:0px}
+#form-login input{text-align: left}
+.loginheader
+{
+  background-color:#8aa1b6;
+  color:#fff;
+  font-weight: bold;
+  text-align: left;
+  font-size: 70%;
+  padding:5px 3px 5px 10px;
+  height: 12px;
+}
+
+#footer-panel{width: 100%; height: 120px !important}
+/** jAlerts **/
+#popup_container{font-family:Arial,sans-serif;font-size:12px;min-width:600px;max-width:900px;background:#FFF;border: solid 5px #999;color:#000;-moz-border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px}
+#popup_title{font-size:14px;font-weight:bold;text-align:center;line-height:1.75em;color:#666;background:#CCC url(../images/title.gif) top repeat-x;border: solid 1px #FFF;border-bottom: solid 1px #999;cursor:default;padding:0em;margin:0em;}
+#popup_content{background:16px 16px no-repeat url(../images/info.gif);padding:1em 1.75em;margin:0em;}#popup_content.alert{background-image: url(../images/info.gif);}#popup_ok{width:2.2cm}
+#popup_content.prompt{background-image: url(../images/help.gif);}#popup_message{padding-left:48px;}#popup_panel{text-align:center;margin:1em 0em 0em 1em;}#popup_prompt{margin: .5em 0em;}
+

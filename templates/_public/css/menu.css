@@ -1,0 +1,197 @@
+.jm-menu .jm-separator {
+	border-style: solid;
+	border-width: 0px;
+	display: block;
+	font-size: 1px;
+	position: relative;
+	z-index: 1;
+ }
+.jm-menu .jm-title {
+	cursor: default;
+	display: block;
+	position: relative;
+	white-space: nowrap;
+	z-index: 1;
+ }
+.jm-clear {
+	clear: both;
+	display: block;
+	float: none !important;
+	font-size: 1px;
+	height: 0px;
+	line-height: 0px;
+	width: 0px;
+ }
+.jm-menu {
+	position: relative;
+	z-index: 10;
+	zoom: 1;
+ }
+.jm-menu a, .jm-menu li {
+	display: block;
+	float: left;
+	position: relative;
+	white-space: nowrap;
+	z-index: 1;
+	text-decoration:none;
+ }
+.jm-menu a{
+	padding:6px 10px 6px 8px;
+	margin-bottom: 0px;
+}
+.jm-menu>li>a{white-space:normal}
+.jm-menu ul a, .jm-menu ul li {
+	float: none;
+}
+.jm-menu li {
+	z-index: auto;
+ }
+.jm-menu ul {
+	left: -10000px;
+	position: absolute;
+	z-index: 10;
+ }
+.jm-menu, .jm-menu ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+ }
+.jm-menu li a {
+	float: none;
+ }
+ 
+.jm-rightItem, .jm-menu .jm-rightItem {float:right}
+.jm-rightItem a{padding: 6px 7px 5px 6px; }
+
+
+
+.jm-menu li:hover>ul {
+	left: auto;
+ }
+.jm-menu li.jm-rightItem:hover>ul {
+	left: -120px;
+}
+ 
+.jm-iconItem a{padding: 6px 2px 5px}
+ 
+#top-menubar ul {
+	top: 100%;
+ }
+ 
+#top-menubar ul li:hover>ul {
+	left: 100%;
+	top: 0px;
+ }
+
+/*"""""""" (MAIN) Container""""""""*/	
+#top-menubar	
+{	
+	width:100%;
+	background-color:#F1F1F1;
+	border-width:3px 0px 3px 0px;
+	border-style:solid;
+	border-color:#A5A7A7;
+}
+
+
+/*"""""""" (MAIN) Items""""""""*/	
+#top-menubar a	
+{	
+	color:#777;
+	font-family:Arial;
+	font-size:14px;
+	text-align:left;
+	display:inline-block;
+}
+
+
+/*"""""""" (MAIN) Hover State""""""""*/	
+#top-menubar a:hover	
+{	
+	background-color:#D7D8D8;
+}
+
+
+/*"""""""" (MAIN) Hover State - (duplicated for pure CSS)""""""""*/	
+#top-menubar li:hover>a	
+{	
+	background-color:#D7D8D8;
+}
+
+
+/*"""""""" (MAIN) Active State""""""""*/	
+
+/*"""""""" (SUB) Container""""""""*/	
+#top-menubardiv, #top-menubar ul	
+{	
+	padding:5px;
+	margin:0px;
+	background-color:#EEE;
+	border-width:3px 1px 1px 1px;
+	border-style:solid;
+	border-color:#7B7E7E;
+}
+
+
+/*"""""""" (SUB) Items""""""""*/	
+#top-menubar ul a	
+{	
+	padding:3px 20px 3px 10px;
+	margin-left:3px;
+	border-width:0px;
+	border-style:none;
+}
+
+
+
+/*"""""""" (SUB) Hover State - (duplicated for pure CSS)""""""""*/	
+#top-menubar ul li:hover>a	
+{	
+	text-decoration:underline;
+	background-color: #DDD;
+}
+
+
+/*"""""""" Individual Titles""""""""*/	
+#top-menubar .jm-title	
+{	
+	margin:8px 5px 5px 2px;
+	color:#555;
+	font-family:Arial;
+	font-size:10px;
+	font-style:italic;
+	font-weight:bold;
+	text-align: right;
+	border-bottom: 2px double #555;
+
+}
+
+/*"""""""" Individual Horizontal Dividers""""""""*/	
+#top-menubar .jm-separator	
+{	
+	border-top-width:2px;
+	margin:4px 5px 4px 5px;
+	border-color:#555;
+}
+
+li span.ui-icon{display:inline-block;}
+.jm-menu .ui-icon{vertical-align:bottom; margin-right: 1px; float: left; margin-left: -15px}
+
+
+.jm-submenu .jm-icon{float:right; margin-left: 5px; background-position:-64px -16px;}
+li li .jm-submenu .jm-icon{background-position:-32px -16px;}
+
+#top-menubar li ul{min-width: 130px}
+li .text-2-line{margin-left: 5px; display: block;}
+
+#top-menubar a.ui-state-disabled:hover{
+	text-decoration:none; background:transparent
+}
+
+.jm-rightItem .ui-icon{margin-left:0; margin-right:3px }
+
+/** MENU **/
+.ui-sidebar-menu {
+  margin: 0 auto 5mm;
+  width: 100%; 
+ }

@@ -1,0 +1,21 @@
+#form-asistencia-clase{ margin-bottom: 10px}
+#asistencias-clases-fechas{width: 138px; margin: 0 auto; text-align: left}
+#header-text-asistenciaRegistrada{color: #222222}
+#wrapper-inasistenciasIndividual{width: 850px; margin: 0 auto;}
+.wrapper-componentes-inasistencias{border: 2px solid #CCCCCC; padding: 5px; float: left; margin: 5px 5px}
+#wrapper-resumen-inasistencias-individual{float:none; width: 300px; margin:5px auto; margin-top: 30px; }
+.table-inasistencias-individual thead th{background-color: #DDD; padding:2px}
+.estudiante-flotante{color: blue}
+
+.clase-noRegistrada label{font-weight: 900}
+.clase-noRegistrada .ui-icon{display: none}
+.clase-registrada label{font-weight: 100; color:#AAA; }
+.clase-registrada .ui-icon{float: right; margin-right: 3px;}
+
+
+.table-formatoAsistencia{border: 1px; page-break-after:always; margin-bottom: 10px; width: 640px; }
+.table-formatoAsistencia td{background: none;  padding: 0 10px 0 3px; text-align: left;font-size: 8pt}
+.table-formatoAsistencia tfoot td {font-weight: 900}
+.observaciones{height: 110px; vertical-align:top;}
+.observaciones td{padding-top: 5px}
+.column-contador{width: 10px}

@@ -1,0 +1,338 @@
+body {
+	height:95%;
+	width:98%;
+}
+
+.center{
+	text-align: center
+}
+
+.centrado{
+		text-align: center
+}
+
+.contenido{
+	position:absolute;
+	height:90%;
+	width:98%;
+}
+
+.link{
+	text-decoration: underline;
+	cursor: pointer;
+}
+span.link{
+	text-decoration: none;
+	border-bottom: 1px dashed #EEE;
+}
+
+div.decorated{
+	margin: 0 auto;
+	margin-top: 2.3cm;
+	text-align: center;
+	width:80%;
+	padding:1cm 0.5cm;
+	background-color:#f8f8f8;
+	border:2px solid #d6d6d6;
+	font-size: 10pt;
+	font-family: 'Verdana', "Trebuchet MS";
+	color: #555;
+}
+
+div.decorated h3{
+	font-family: "Trebuchet MS", Verdana;
+	font-size: 16pt;
+	color: red;
+	margin-bottom: 3mm;
+	text-decoration: none;
+	line-height: 70%;
+	text-align: center;
+	font-weight: bold;
+}
+
+div.decorated button#submit{
+		margin-left: 3mm;
+}
+
+div.decorated table{
+		margin: 0 auto;
+}
+
+.encabezado {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	color: #FF0000;
+	text-align: right;
+}
+
+.encabezadoCentrado {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	color: #FF0000;
+	text-align: center;
+}
+
+.encabezadoSinSubrayado {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	color: #FF0000;
+	text-align: right;
+	text-decoration: none;
+}
+
+.titulo1 {
+	font-family: "Trebuchet MS", Verdana;
+	font-size: 18pt;
+	font-weight: bold;
+	color: #666666;
+	line-height: 70%;
+	text-align: center;
+}
+
+.titulo2 {
+	font-family: "Trebuchet MS", Verdana;
+	font-size: 18pt;
+	font-weight: bold;
+	color: #999999;
+	line-height: 30%;
+}
+
+
+.titulo3 {
+	font-family: "Trebuchet MS", Verdana;
+	font-size: 14pt;
+	font-weight: bold;
+	color: #333333;
+	text-decoration: none;
+	line-height: 70%;
+	text-align: center;
+}
+
+td.consolidado_nota{
+	background-color: rgb(195, 200, 195);
+}
+
+.contenidoCeldas {
+	font-family: "Trebuchet MS", Verdana;
+	font-size: 9pt;
+	font-weight: light;
+	color: #333333;
+	text-decoration: none;
+	line-height: 70%;
+	text-align: center;
+}
+
+.enlace1 {
+	font-family: "Trebuchet MS", Verdana;
+	font-size: 8pt;
+	color: #FF0000;
+	text-decoration: underline;
+	background-color: #E5E5E5;
+}
+.tablas {
+	font-family: "Trebuchet MS", Verdana;
+	font-size: 8pt;
+	color: #333333;
+}
+.tablas2 {
+	font-family: "Trebuchet MS", Verdana;
+	font-size: 8pt;
+	color: #333333;
+	font-weight: bold;
+}
+
+.letraFormNumeros{
+	font-family: "Trebuchet MS", Verdana;
+	font-size: 8pt;
+	color: #333333;
+	text-align: right;
+}
+
+.letraForm1 {
+	font-family: "Trebuchet MS", Verdana;
+	font-size: 10pt;
+	color: #666666;
+}
+.letraForm2 {
+	font-family: "Trebuchet MS", Verdana;
+	font-size: 10pt;
+	color: #333333;
+}
+.letraForm3 {
+	font-family: "Trebuchet MS", Verdana;
+	font-size:12px;
+	color: #333333;
+	font-weight: bold;
+	text-align: right;
+}
+
+.pie {
+	text-align:center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #666666;
+	width:98%;
+}
+.esquinaRedondeada {
+	height:22px;
+	width:19px;
+}
+
+
+.input1 {
+	font-size:12px;
+	border-style:none;
+}
+.input2 {
+	font-size:12px;
+	border-style:none;
+	background-color:#F1F1F1;
+	color: #333333;
+	font-weight: bold;
+	text-align: right;
+}
+.input3 {
+	font-size:12px;
+	border-style:none;
+	background-color:#FAF9FA;
+	text-align: center;
+}
+
+
+
+.header{
+	background-color: #8AA1B6;
+	color: white;
+	text-indent: 2mm;
+	padding-top: 5px;
+	border-bottom: 1.5px grey outset;
+}
+
+input.error {
+	background-color: #DEB887;
+	color: white;
+}
+
+input.error+span {
+	color: red;
+	font-weight: bold;
+	font-style: normal;
+}
+
+td.underlined{
+	border-bottom:outset 1px;
+	font-weight: bold;
+}
+
+label.required strong {
+	color: red;
+}
+
+
+/******************************** ESTILOS PARA LISTAS CON MENUS **********************************/
+
+.menu ul {
+		padding:0;
+	}
+
+.menu {
+		width:300px;
+		font-family: "Trebuchet MS", Verdana;
+		font-size: 14pt;
+		font-weight: bold;
+		color: #666666;
+		margin:10px 10px 0px 30px;
+		padding:0;
+		list-style:none;
+		display: list-item;
+		list-style-image: url(arrow1.gif);
+}
+
+.menu li {
+		display:block;
+		margin:0;
+		padding:0;
+	}
+
+.menu li li {
+		padding:0px 0px 5px 0px;
+}
+
+ul #sublista{
+		font-size: 11px;
+		border-top: solid 2px;
+		padding:20px;
+}
+
+.menu a {
+		display:block;
+		padding:2px 2px 2px 0px;
+		color:#666666;
+		text-decoration:none;
+	}
+
+.menu a:hover{
+		color: #FF0000;
+}
+
+.menu a:active{
+		color:#000000;
+}
+
+.menu a:focus{
+}
+
+.menu ul li {
+		padding-left:0px;
+		display: list-item;
+		font-size: 10.5pt;
+}
+
+li #informe{
+		margin-left:5px;
+		list-style-image:none;
+		border-bottom: solid 2px;
+}
+
+div #tituloLista{
+		background-color: lightgray;
+}
+
+.hidden {
+		display:none;
+}
+div.mainstyle li > a { width: auto; height: auto; }
+
+/******************************** FIN ESTILO PARA MENUS **********************************/
+
+
+.oculto{
+	display:none;
+}
+
+img.loading-ajax{
+	text-align: center;
+	border: none;
+	margin: 0 auto;
+	margin-top: 1cm;
+}
+
+#head1 {text-align:right; width:100%; color:#FF0000; font-family: Arial, Helvetica, sans-serif; font-size: 8pt;	font-weight: bold; padding:0; margin-bottom:5px;}
+#head1 img {position:absolute; margin:0; top:0; left:0; height:40px;}
+#firma {color:#FF0000; font-size: 8pt; margin-bottom:0; padding-bottom:3px; line-height:8px; text-align:right; width:100%}
+#marca {margin-top:0; color: #ff0000;}
+
+
+
+#table td {background-color:#f5f5f5; 	font-family: "Trebuchet MS", Verdana; font-size: 10pt; color: #333333;}
+#table {background-color:#c5c5c5;}
+#table th {background-color:#d5d5d5;}

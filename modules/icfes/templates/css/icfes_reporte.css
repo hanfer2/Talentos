@@ -1,0 +1,77 @@
+@media screen{
+ div.field{
+ 	width: 4cm;
+ }
+ div.select-options{
+ 	width: 15cm;
+ }
+ button#submit{
+ 	width: 2.5cm;
+ }
+
+ div#type-report{
+ 	border: 1px inset #EEE;
+ 	float:left;
+ 	width: 7.5cm;
+ 	padding: 1mm 2mm;
+ }
+
+ div#type-report div{
+ 	float: left
+ }
+ thead th,
+ thead th.sorting,
+ thead th.sorting_asc{
+ 	border-bottom: 1px double #AAA;
+ }
+
+ .chart{
+ 	min-height: 8cm;
+ }
+
+ .table{
+ 	border: 1px solid #CCC;
+ }
+
+
+.floating-window{
+	width:55em
+}
+
+ .table_by_levels thead th,
+ table#convenciones thead th{
+ 	background-color: #CCC
+ }
+ table#convenciones{
+ 	margin-top:1cm;
+ }
+
+ table#convenciones caption{
+ 	font-weight: bold;
+ 	color: red;
+ 	padding-bottom: 5mm;
+ }
+}
+
+
+@media print{>
+	.non-printable{
+		display: none;
+		margin-top: 0px;
+	}
+	.dataTables_wrapper div.top{
+		display:none
+	}
+	div.decorated{
+			border: none;
+	}
+
+	div#summary-report-div{
+		padding-top: 1.5cm;
+	}
+
+	td[data-nivel=TOTAL]{
+		background-color: #CCC;
+	}
+}
+

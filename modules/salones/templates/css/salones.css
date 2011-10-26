@@ -1,0 +1,22 @@
+
+#hv{width: 620px}
+#hv div.hv-field{float:left; }
+#hv dt{background-color: #999; padding: 0.5mm 2mm; border-right: 1px #777 solid; text-align: center}
+#hv dd{padding: 1mm 3mm; margin-left: 0; text-align: center}
+
+#hv .hv-section{
+	border-bottom: 1px solid #CCC; border-right: 1px inset #CCC; border-left: 1px outset #CCC;
+	padding: 8px; margin: 5px auto
+}
+#hv-section-id{ border-top: 1px solid #CCC}
+
+.thin-field{width: 90px}
+
+#form-registrarSalon fieldset{width: 400px}
+#form-edit_passwd label{width: 170px}
+
+#hv-field-status-text{font-weight:900}
+
+#table-listadoSalones_wrapper {
+width: 450px;
+}

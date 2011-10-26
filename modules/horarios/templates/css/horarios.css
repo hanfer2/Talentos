@@ -1,0 +1,58 @@
+.wrapper-horario-curso {width: 940px; border: 1px solid #AAAAAA; margin: 50px auto}
+.wrapper-horario-curso h2{border-bottom: 1px solid #AAAAAA}
+
+.wrapper-horario-curso .nombre_componente{
+	/*background-color: #556; color: white; */
+	padding: 2px 8px;
+	display: block; margin: 5px auto; text-align: center;
+}
+
+.wrapper-list-componentes{border: 1px solid #AAAAAA; border-top: none}
+	
+
+.wrapper-componente-horario{
+	border: 1px inset #AAAAAA; border-top : none; padding: 2px; margin: 3px 8px; border-left-style: outset;
+}
+.wrapper-inner-componente{
+	background-color: #E5E5E5; border: inset 1.5px #AAA;margin:15px; padding: 10px 5px
+}
+.wrapper-inner-componente select, 
+.wrapper-inner-componente input{	width: 100px}
+.wrapper-inner-componente textarea{width: 180px; display:block; margin: 2px auto}
+
+.wrapper-componente-horario label{padding: 2px 8px 2px 5px}
+.wrapper-horario-componente {
+	border-bottom:1px inset #AAA;
+	border-right:1px inset #AAA;	
+	padding: 10px;
+	width: 250px; 
+	margin: 3px;
+	display: inline-block;
+}
+
+.label-header-cursos{border-bottom: 4px double #AAA; margin: 10px auto; width: 750px; padding:5px}
+.wrapper-locacion-clase{width: 220px}
+input.hour{width: 75px}
+
+#calendar-editHorarios{float:right; width: 78%}
+
+.fc-event-popup {border-color: #666; padding: 0}
+.fc-event-popup .ui-dialog-content{ text-align: center;}
+
+#wrapper-listadoDeComponentes{ border: 1px solid #AAA; float: right; margin-top: 49px; margin-right: 15px;}
+#wrapper-listadoDeComponentes h4{border-bottom: 1px solid #AAA; text-align: center; font-size: 14pt;}
+#inner-listadoDeComponentes{padding: 10px 15px; text-align: left}
+.item-componente{background-color: #AAA; margin: 10px 0px; padding-bottom: 2px; cursor: pointer}
+.item-componente:hover{background-color: #660000;}
+.item-nombre_componente{color:#EEE; padding-right:3px}
+
+.wrapper-popup-infoClase div{margin:8px auto}
+.wrapper-horario-info{width: 260px; margin: auto}
+
+
+.text-asistenciaRegistrada{display:block; margin: 16px auto; font-weight: 900; color: #933}
+.popup-info-horario{line-height: 1.4}
+
+.fc-event-con-asistencia .icon-claseConAsistencia{font-size:12pt; margin-top: 5px; margin-bottom: 0;color: white}
+.fc-event-with-alert .icon-claseConAsistencia{color: #4F70AD}
+.fc-view-month .icon-claseConAsistencia{margin-top:2px; color:white}

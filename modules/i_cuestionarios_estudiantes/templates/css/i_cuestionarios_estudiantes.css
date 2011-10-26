@@ -1,0 +1,84 @@
+/* 
+    Document   : i_cuestionarios_estudiantes
+    Created on : 17/12/2010, 04:07:57 PM
+    Author     : oae
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.respuesta-correctas{color: #005500}
+.respuesta-incorrectas{color: #770000}
+.respuesta-nulas {color:  #5F608E}
+.respuesta-vacias{color: #776666}
+
+.subtotal-valoracion{border-top:4px double #666; margin-bottom: 5px}
+.subtotal-valoracion .ui-field{margin:2px 10px; }
+
+#table-resumenNotas{width: 200px; margin-top: 30px}
+
+.letra-escogida .placeholder{color: #770000}
+.letraConRespuestaCorrecta .placeholder{color: #050}
+.letraConRespuestaCorrecta{color: #050 !important; border: 1px solid #050}
+
+.questions-line-field .ui-field{
+	margin: 3px 4px;
+	padding: 3px 4px
+}
+.questions-line-field label{width: auto}
+
+.wrapper-respuestasComponente{width: 650px; margin: auto}
+
+h5.header-nombreComponente{
+	font-size: 16pt; color: #AAA;
+	border:1px solid #CCC;border-bottom: 3px double #444;
+	margin-bottom:0px ; margin-top: 5px;
+}
+
+
+.inner-respuestasComponente{border: 1px groove #CCC; background-color: #F0F0F0; border-top: 1px solid transparent; font-size: 12pt;}
+.inner-respuestasComponente .questions-line-field{margin: 0px; border-bottom: 1px solid #E0E0E0}
+.inner-respuestasComponente .lb-letraRespuesta{padding-right:2px; padding-left: 20px}
+.inner-respuestasComponente .pregunta-numeral{font-size: 11pt; color: #333; font-weight: bold; display: inline-block}
+
+.inner-respuestasComponente .questions-line-field
+{background: transparent}
+
+.inner-respuestasComponente .odd-questions-line-field
+{background: #C5C5C5}
+
+.inner-respuestasComponente .active-questions-line{
+	background-color:#AA7676 !important; font-weight: 900; color: #333
+}
+.active-questions-line .pregunta-numeral{font-size: 12pt;}
+
+h5.active-nombreComponente{color: #555}
+.inner-respuestasComponente .status-icon{
+	font-size: 18pt; font-weight: 900; width: 20px; display: inline-block;
+	margin-right: 6px; float: right;
+}
+.nombre-componente.h-3{
+	border-bottom: 3px double #999;
+	background-color: #DFDFDF;
+	padding-left: 5px;
+}
+#wrapper-cuestionario-competencias,
+#wrapper-cuestionario-cualitativos
+{
+	width: 400px;
+	text-align: center;
+	margin: auto;
+	float: left;
+}
+.fixed-width .inline{display:inline-block}
+.nota-valoracion{width: 120px; text-align: center;}
+
+#table-resumenNotas .total{border-top: 3px double #666;}
+#table-resumenNotas .total th, #table-resumenNotas .total td{font-size:12pt}
+
+.header-nombreComponente .h-componenteIncompleto{ text-decoration:line-through; color: #060; font-weight: bold;}
+.header-nombreComponente .icon-status{text-decoration:none; float: right; color: #060;}
+
+.casilla{font-size:14pt; padding-right:15px}
+.resp-t{font-size: 22pt; line-height:16px}
+
+.wrapper-respuestasComponente .lb-letra{padding-right:0; }

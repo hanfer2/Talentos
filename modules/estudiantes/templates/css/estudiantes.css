@@ -1,0 +1,9 @@
+.p-content-item {border: 1px solid #CCC; border-top: none; min-height:222px}
+
+#wrapper-reporte-participantes .wrapper-table-3-column{width:290px}
+
+
+#wrapper-reporte-participantes .wrapper-informe{float:left}
+#wrapper-reporte-participantes .wrapper-informe .dataTables_wrapper{padding:2px}
+#wrapper-reporte-participantes .wrapper-chart{float:left; margin-left:10px}
+

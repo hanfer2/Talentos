@@ -1,0 +1,19 @@
+
+.wrapper-tipoObservacion{
+	border-bottom: 2px inset #999; border-right: 2px inset #999;
+	border-top: 1px solid #AAA; border-left: 1px solid #AAA;
+	padding: 8px; margin: 5px; background-color: #F9F9F9;
+}
+
+.wrapper-tipoObservacion h2{color:#666}
+.wrapper-tipoObservacion .observacion-text{text-align: justify; padding: 6px}
+.wrapper-tipoObservacion .date{text-align: right; font-size: 8pt;}
+
+#wrapper-form-nuevaObservacion{
+	width: 400px; padding: 15px; margin: 15px auto 0; 
+	border: 1px inset #DDD; background-color: #EEE
+}
+#wrapper-form-nuevaObservacion h2{ text-decoration: underline}
+#form-nuevaObservacion{width: auto}
+
+

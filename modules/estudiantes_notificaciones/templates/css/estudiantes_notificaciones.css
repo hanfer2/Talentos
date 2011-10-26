@@ -1,0 +1,7 @@
+#listado-notificaciones{
+	width: 505px; 
+}
+.notificacion .notificacion-msg{
+	padding: 5px;
+	margin: 5px auto;	
+}

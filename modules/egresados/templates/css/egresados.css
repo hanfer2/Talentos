@@ -1,0 +1,15 @@
+
+#wrapper-form-ies{width: 700px; margin: 5px auto;	padding: 10px; }
+#form-ies{width: 300px}
+
+#panel-Carrera{width:280px; margin-left:18px}
+#icon-mostrarTodasCarreras{margin-left:0;margin-right:0;}
+#icon-mostrarTodasCarreras:hover{background-color:#E8E8E8}
+#panel-campos-estaticos{margin-top: 15px}
+
+.informe-nombre-carreras{text-align: left; width: 370px}
+.informe-cant-egresados{width: 38px}
+tfoot .name-component-report{width: 650px; font-weight:900}
+.summary-report{font-weight: 900; border: 1px inset #AAA}
+.summary-report .total-label-sumary-report{font-size: 16pt; width: 650px; }
+.summary-report .total-sumary-report{width:38px; font-size: 16pt;}

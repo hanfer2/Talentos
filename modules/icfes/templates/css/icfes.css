@@ -1,0 +1,37 @@
+#tabs-ReporteDetallado .boxed{width:7.25cm; text-align: center;height: auto}
+table.table-reporteIndividualIcfesCompetencias{width: 300px}
+.dataTables_wrapper.wrapper-table-2-column{width:400px}
+.dataTables_wrapper.wrapper-table-3-column{width:600px}
+
+#table-icfes-reporteDetalladoPorNiveles .porcentaje{color: #333333; font-weight: 900; width: 50px; margin: auto; padding: 3px 0; border-bottom: 1px solid #CCC}
+#table-icfes-reporteDetalladoPorNiveles .ratio{color: #777777; font-weight: 300; font-size: 10pt}
+
+#table-icfes-convencionesNiveles{width: 300px}
+
+.header-resumenNiveles{margin-top: 20px;}
+table.convenciones{width:300px}
+
+.ui-tabs-nav a{font-size: 12pt}
+
+#tabs-icfesComparativas .subtitle-header{color: #333; font-size:13px}
+#tabs-icfesComparativas .subtitle-header strong{text-decoration: underline;  color:#24285B; font-size:14px}
+
+#tabs-ReporteDetallado .ajax-response{margin-top: 18px}
+
+#menu-toggleGrupo .fg-button{font-size: 12pt}
+
+.outer-i_calificador-reporteGeneral{border: 1px solid #BBB; border-top: none; margin-top: 10px}
+.outer-i_calificador-reporteGeneral h3{font-size: 16pt}
+
+.wrapper-i_calificador-reporteGeneral{ background-color: #DDD; border: 1px solid #999; width: 99%; margin:auto}
+
+.inner-i_calificador-reporteGeneral .dataTables_wrapper{ width: auto;}
+.inner-i_calificador-reporteGeneral h4{
+	font-size: 18pt; margin: 16px auto 0; padding: 2px 0; background-color: #EEE;
+	border-bottom: 3px double #999; border-top: 1px solid #999;
+}
+.inner-i_calificador-reporteGeneral h4 + .dataTables_wrapper{margin-top: 0}
+
+.outer-i_calificador-reporteGeneral .header-widget.ui-state-default{margin-top: 0}
+
+.prueba-oculta div{color: #999}

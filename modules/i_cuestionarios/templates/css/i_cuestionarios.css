@@ -1,0 +1,71 @@
+#form-registrarCuestionario{
+	width: auto;
+}
+div.ui-field.cabecera-pregunta{
+	font-weight: bold;
+	font-size: 11pt;
+	color: #333;
+	border-right: 1px solid #555;
+	padding-right: 10px;
+	margin-right: 10px;
+}
+
+.questions-line-field .ui-field{ 
+	margin: 3px 4px; 
+	padding: 3px 4px
+}
+.questions-line-field label{width: auto}
+
+h5.header-nombreComponente{
+	font-size: 16pt; color: #AAA;
+	border:1px solid #CCC;border-bottom: 3px double #444; 
+	margin-bottom:0px ;margin-top: 14px; 
+}
+h5.active-nombreComponente{color: #555}
+.inner-respuestasComponente .status-icon{
+	font-size: 18pt; font-weight: 900; width: 20px; display: inline-block;
+	margin-right: 6px; float: right;
+}
+
+.list-reporte-cuestionario .nombre-componente{
+	
+}
+
+li.item-componentes-detalles{
+	margin-top: 15px;
+	border: 1px solid #999;
+}
+
+li.item-competencias,
+li.item-cualitativo
+{
+	padding: 3px 0;
+}
+
+.list-reporte-cuestionario .label-item{
+	width: 290px;
+	display: inline-block;
+}
+.value-item{
+	text-align: right;
+}
+.nombre-componente.h-3{
+	border-bottom: 3px double #999;
+	background-color: #DFDFDF;
+	padding-left: 5px;
+}
+#wrapper-cuestionario-competencias,
+#wrapper-cuestionario-cualitativos
+{
+	width: 400px;
+	text-align: center;
+	margin: auto;
+	float: left;
+}
+.fixed-width .inline{display:inline-block}
+.nota-valoracion{width: 120px; text-align: center;}
+
+.pregunta-numeral{width:60px}
+
+#form-registrarCuestionario .questions-line-field:hover{background-color:#F5A9A9}
+
