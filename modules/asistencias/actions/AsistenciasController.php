@@ -129,15 +129,14 @@
       $this->vista->display();
     }
 
-function ClasesPorComponentes($nombreComponente){
+function claseporcomponente($nombreComponente){
   
-
-//echo "<br>"."no me sale".$nombreComponente['nombrecomponente'];
-
+  //print_r ($nombreComponente);
+  $nombre=TAsistencia::nombre($nombreComponente['nombrecomponente']);
   $cursoxcomponente =TAsistencia::cursoPorComponenteAsistencia($nombreComponente['nombrecomponente']);
-   $this->vista->set('nombreComponente',$nombreComponente);
+  $this->vista->set('nombre',$nombre);
   $this->vista->set('cursoxcomponente',$cursoxcomponente);
-   $this->vista->display();
+  $this->vista->display();
   
 }
 

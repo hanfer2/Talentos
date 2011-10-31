@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-10-21 12:50:28
+<?php /* Smarty version 2.6.26, created on 2011-10-27 15:51:55
          compiled from ./modules/asistencias/templates//componentes.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'include_template', './modules/asistencias/templates//componentes.tpl', 5, false),array('function', 'link_to', './modules/asistencias/templates//componentes.tpl', 42, false),array('function', 'include_partial', './modules/asistencias/templates//componentes.tpl', 66, false),array('modifier', 'escape', './modules/asistencias/templates//componentes.tpl', 42, false),array('modifier', 'default', './modules/asistencias/templates//componentes.tpl', 43, false),array('modifier', 'date_format', './modules/asistencias/templates//componentes.tpl', 62, false),)), $this); ?>
@@ -16,7 +16,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'include_tem
   <table class='table dataTable non-paginable' id='table-inasistenciasGeneral'>
 <thead>
 	<tr>
-	<th  rowspan='3'>componentes</th>
+	<th  rowspan='3'>COMPONENTES</th>
 		<th colspan='10'>INASISTENCIAS</th>
 
 	</tr>
@@ -46,7 +46,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'include_tem
     foreach ($_from as $this->_tpl_vars['componentes']):
 ?>
       <tr>
-        <td><?php echo smarty_function_link_to(array('name' => ((is_array($_tmp=$this->_tpl_vars['componentes']['nombre_componente'])) ? $this->_run_mod_handler('escape', true, $_tmp) : smarty_modifier_escape($_tmp)),'action' => 'ClasesPorComponentes','nombreComponente' => $this->_tpl_vars['componentes']['nombre_componente']), $this);?>
+        <td><?php echo smarty_function_link_to(array('name' => ((is_array($_tmp=$this->_tpl_vars['componentes']['nombre_componente'])) ? $this->_run_mod_handler('escape', true, $_tmp) : smarty_modifier_escape($_tmp)),'action' => 'claseporcomponente','nombreComponente' => $this->_tpl_vars['componentes']['cod_componente']), $this);?>
 </td>
         <td><?php echo ((is_array($_tmp=@$this->_tpl_vars['componentes']['excusamedica'])) ? $this->_run_mod_handler('default', true, $_tmp, 0) : smarty_modifier_default($_tmp, 0)); ?>
  </td>

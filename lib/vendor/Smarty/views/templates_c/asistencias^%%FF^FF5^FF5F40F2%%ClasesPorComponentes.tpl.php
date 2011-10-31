@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.26, created on 2011-10-21 17:57:45
+<?php /* Smarty version 2.6.26, created on 2011-10-26 16:01:10
          compiled from ./modules/asistencias/templates//ClasesPorComponentes.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'include_template', './modules/asistencias/templates//ClasesPorComponentes.tpl', 5, false),array('function', 'include_partial', './modules/asistencias/templates//ClasesPorComponentes.tpl', 66, false),array('modifier', 'escape', './modules/asistencias/templates//ClasesPorComponentes.tpl', 9, false),array('modifier', 'default', './modules/asistencias/templates//ClasesPorComponentes.tpl', 43, false),array('modifier', 'date_format', './modules/asistencias/templates//ClasesPorComponentes.tpl', 62, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'include_template', './modules/asistencias/templates//ClasesPorComponentes.tpl', 5, false),array('function', 'include_partial', './modules/asistencias/templates//ClasesPorComponentes.tpl', 65, false),array('modifier', 'escape', './modules/asistencias/templates//ClasesPorComponentes.tpl', 9, false),array('modifier', 'default', './modules/asistencias/templates//ClasesPorComponentes.tpl', 42, false),array('modifier', 'date_format', './modules/asistencias/templates//ClasesPorComponentes.tpl', 61, false),)), $this); ?>
 <?php if (empty ( $this->_tpl_vars['cursoxcomponente'] )): ?>
 	<p>No hay Inasistencias Reportadas</p>
 <?php else: ?>
@@ -14,7 +14,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'include_tem
   <h1>Listado de Asistencias Por Cursos Componente <?php echo ((is_array($_tmp=$this->_tpl_vars['nombreComponente']['nombrecomponente'])) ? $this->_run_mod_handler('escape', true, $_tmp) : smarty_modifier_escape($_tmp)); ?>
 </h1>
  
-  <table class='table dataTable non-paginable' id='table-inasistenciasGeneral'>
+  <table class='table dataTable non-paginable' id='table-inasistencias'>
 <thead>
 	<tr>
 	<th  rowspan='3'>CURSOS</th>
@@ -28,8 +28,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'include_tem
 	</tr>
 	<tr>
     
-		
-		<th>EXCUSA MÉDICA</th>
+		<th>EXCUSA MEDICA</th>
 		<th>CALAMIDAD</th>
     <th>ESTUDIO</th>
     <th>TRANSPORTE+</th>
@@ -52,26 +51,26 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'include_tem
         <td><?php echo ((is_array($_tmp=@$this->_tpl_vars['cursoxcomponente']['excusamedica'])) ? $this->_run_mod_handler('default', true, $_tmp, 0) : smarty_modifier_default($_tmp, 0)); ?>
  </td>
         <td><?php echo ((is_array($_tmp=@$this->_tpl_vars['cursoxcomponente']['calamidad'])) ? $this->_run_mod_handler('default', true, $_tmp, 0) : smarty_modifier_default($_tmp, 0)); ?>
- </td>
+</td>
         <td><?php echo ((is_array($_tmp=@$this->_tpl_vars['cursoxcomponente']['estudio'])) ? $this->_run_mod_handler('default', true, $_tmp, 0) : smarty_modifier_default($_tmp, 0)); ?>
- </td>
+</td>
         <td><?php echo ((is_array($_tmp=@$this->_tpl_vars['cursoxcomponente']['transportemas'])) ? $this->_run_mod_handler('default', true, $_tmp, 0) : smarty_modifier_default($_tmp, 0)); ?>
  </td>
        
       <td class='total total-asistenciasJustificadas'></td>
        
         <td><?php echo ((is_array($_tmp=@$this->_tpl_vars['cursoxcomponente']['nojustificada'])) ? $this->_run_mod_handler('default', true, $_tmp, 0) : smarty_modifier_default($_tmp, 0)); ?>
- </td>
+</td>
         <td><?php echo ((is_array($_tmp=@$this->_tpl_vars['cursoxcomponente']['trabajo'])) ? $this->_run_mod_handler('default', true, $_tmp, 0) : smarty_modifier_default($_tmp, 0)); ?>
  </td>
         <td><?php echo ((is_array($_tmp=@$this->_tpl_vars['cursoxcomponente']['transportemenos'])) ? $this->_run_mod_handler('default', true, $_tmp, 0) : smarty_modifier_default($_tmp, 0)); ?>
- </td>
+</td>
         
    <td class='total total-asistenciasInjustificadas'></td>
   
        <td><?php echo ((is_array($_tmp=@$this->_tpl_vars['cursoxcomponente']['total'])) ? $this->_run_mod_handler('default', true, $_tmp, 0) : smarty_modifier_default($_tmp, 0)); ?>
 </td>
-    </tr>
+   </tr>
       
         <?php endforeach; endif; unset($_from); ?>
     </tbody>

@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.26, created on 2011-09-15 17:38:15
+<?php /* Smarty version 2.6.26, created on 2011-10-27 17:11:39
          compiled from ./modules/programas/templates//index.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'link_to', './modules/programas/templates//index.tpl', 26, false),array('function', 'include_partial', './modules/programas/templates//index.tpl', 38, false),array('modifier', 'date_format', './modules/programas/templates//index.tpl', 27, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'link_to', './modules/programas/templates//index.tpl', 26, false),array('function', 'include_partial', './modules/programas/templates//index.tpl', 39, false),array('modifier', 'date_format', './modules/programas/templates//index.tpl', 27, false),)), $this); ?>
 <?php ob_start(); ?>
 	<?php if (is_super_admin_login ( )): ?>
 	<a href="#" id="link-registrarNuevoPlan">Registrar Nuevo PNAT</a>
@@ -45,7 +45,9 @@ unset($_smarty_tpl_vars);
 </td>
         <td class="date"><?php echo ((is_array($_tmp=$this->_tpl_vars['programa']['fecha_cierre_2'])) ? $this->_run_mod_handler('date_format', true, $_tmp) : smarty_modifier_date_format($_tmp)); ?>
 </td>
-        <td><?php if (date_compare ( $this->_tpl_vars['programa']['fecha_cierre_2'] , date ( "Y-M-D" ) ) < 0 && date_contains ( $this->_tpl_vars['programa']['fecha_inicio_1'] , $this->_tpl_vars['programa']['fecha_cierre_2'] )): ?>&#10004;<?php else: ?>&#10008;<?php endif; ?></td>
+        <td><?php if (( $this->_tpl_vars['programa']['fecha_cierre_2'] > "2011-06-27" )): ?>&#10004;<?php else: ?>&#10008;<?php endif; ?></td>
+      <!--<?php echo ((is_array($_tmp='now')) ? $this->_run_mod_handler('date_format', true, $_tmp) : smarty_modifier_date_format($_tmp)); ?>
+        -->
       </tr>
       <?php endforeach; endif; unset($_from); ?>
     </tbody>

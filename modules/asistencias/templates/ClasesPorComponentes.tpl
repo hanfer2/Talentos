@@ -6,9 +6,9 @@
 	<div class='ajax-response' id='ajax-listadoDeInasistencias'></div>
 -->
 <div class="ui-widget decorated">
-  <h1>Listado de Asistencias Por Cursos Componente {$nombreComponente.nombrecomponente|escape}</h1>
+  <h1>Listado de Asistencias Por Cursos Componente {$nombre}</h1>
  
-  <table class='table dataTable non-paginable' id='table-inasistenciasGeneral'>
+  <table class='table dataTable non-paginable' id='table-inasistencias'>
 <thead>
 	<tr>
 	<th  rowspan='3'>CURSOS</th>
@@ -22,8 +22,7 @@
 	</tr>
 	<tr>
     
-		
-		<th>EXCUSA MÉDICA</th>
+		<th>EXCUSA MEDICA</th>
 		<th>CALAMIDAD</th>
     <th>ESTUDIO</th>
     <th>TRANSPORTE+</th>
@@ -41,20 +40,20 @@
       <tr>
         <td>{$cursoxcomponente.curso|escape}</td>
         <td>{$cursoxcomponente.excusamedica|default:0} </td>
-        <td>{$cursoxcomponente.calamidad|default:0} </td>
-        <td>{$cursoxcomponente.estudio|default:0} </td>
+        <td>{$cursoxcomponente.calamidad|default:0}</td>
+        <td>{$cursoxcomponente.estudio|default:0}</td>
         <td>{$cursoxcomponente.transportemas|default:0} </td>
        
       <td class='total total-asistenciasJustificadas'></td>
        
-        <td>{$cursoxcomponente.nojustificada|default:0} </td>
+        <td>{$cursoxcomponente.nojustificada|default:0}</td>
         <td>{$cursoxcomponente.trabajo|default:0} </td>
-        <td>{$cursoxcomponente.transportemenos|default:0} </td>
+        <td>{$cursoxcomponente.transportemenos|default:0}</td>
         
    <td class='total total-asistenciasInjustificadas'></td>
   
        <td>{$cursoxcomponente.total|default:0 }</td>
-    </tr>
+   </tr>
       
         {/foreach}
     </tbody>
@@ -67,4 +66,3 @@
 {/if}-->
 </div>
 {/if}
-

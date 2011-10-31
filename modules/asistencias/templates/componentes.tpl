@@ -11,7 +11,7 @@
   <table class='table dataTable non-paginable' id='table-inasistenciasGeneral'>
 <thead>
 	<tr>
-	<th  rowspan='3'>componentes</th>
+	<th  rowspan='3'>COMPONENTES</th>
 		<th colspan='10'>INASISTENCIAS</th>
 
 	</tr>
@@ -39,7 +39,7 @@
     <tbody>
 		{foreach from=$componentes item=componentes}
       <tr>
-        <td>{link_to name =$componentes.nombre_componente|escape action='ClasesPorComponentes' nombreComponente=$componentes.nombre_componente}</td>
+        <td>{link_to name =$componentes.nombre_componente|escape action='claseporcomponente' nombreComponente=$componentes.cod_componente}</td>
         <td>{$componentes.excusamedica|default:0} </td>
         <td>{$componentes.calamidad|default:0	} </td>
         <td>{$componentes.estudio|default:0} </td>

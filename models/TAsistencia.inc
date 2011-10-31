@@ -19,37 +19,137 @@
 			$conditions = array('cod_clase' => $cod_clase);
 			if (!is_null($cod_interno))
 				$conditions['cod_interno'] = $cod_interno;
-        //echo (__CLASS__);
-       // print_r (array('conditions' => $conditions));
 			return parent::all(__CLASS__, array('conditions' => $conditions));
 		}
+    
     /*funcion que retorna todos los grupos con su inasistencia*/
 function all2($cod_programa) {
   
-     $sql = "SELECT grupo, SUM (inasistencias) as inasistencias
-          FROM vi_inasistencias A1 , v_grupo B1 WHERE cod_curso=cod_grupo AND B1.cod_programa='$cod_programa' GROUP BY grupo";
+     $sql = "SELECT * FROM inasistencia_grupo_motivos";
      
       return DB::query($sql);
     }
     
     function allSubgruposDeUnGrupo($grupo) {
       
-       // echo "<br>".$grupo."  consulta";
-     $sql = "SELECT nombre_grupo, SUM (inasistencias) as inasistencias
-          FROM vi_inasistencias A1 , v_grupo B1 WHERE  grupo='$grupo' and nombre_curso = nombre_grupo and B1.cod_programa='003'  GROUP BY nombre_grupo ORDER BY nombre_grupo asc";
-     
+     $sql = "SELECT justificadas.nombre_grupo, excusamedica, calamidad, estudio, transporte , trabajo,transportemenos,nojustificada ,justificadas.inasistencias 
+FROM
+(select uno.nombre_grupo, excusamedica, calamidad, estudio, transporte ,uno.inasistencias 
+from
+(select total.nombre_grupo, inasistencias, excusamedica
+from
+(SELECT nombre_grupo, SUM (inasistencias) as inasistencias
+          FROM vi_inasistencias A1 , v_grupo B1 
+WHERE grupo='$grupo' and cod_curso=cod_grupo AND B1.cod_programa='003' GROUP BY nombre_grupo order by nombre_grupo)as total
+
+left join 
+
+(SELECT nombre_grupo, sum(inasistencias)as excusamedica
+          FROM vi_inasistencias A1 , v_grupo B1 
+WHERE grupo='$grupo' and cod_curso=cod_grupo AND B1.cod_programa='003' and cod_motivo='1' GROUP BY nombre_grupo order by nombre_grupo)as excusamedica
+ON(total.nombre_grupo=excusamedica.nombre_grupo)) as uno
+
+
+left join
+
+(select interna1.nombre_grupo, inasistencias, calamidad, estudio, transporte
+from
+
+(select total.nombre_grupo, inasistencias, transporte
+from
+(SELECT nombre_grupo, SUM (inasistencias) as inasistencias
+          FROM vi_inasistencias A1 , v_grupo B1 
+WHERE grupo='$grupo' and cod_curso=cod_grupo AND B1.cod_programa='003' GROUP BY nombre_grupo order by nombre_grupo)as total
+
+left join 
+
+(SELECT nombre_grupo, sum(inasistencias)as transporte
+          FROM vi_inasistencias A1 , v_grupo B1 
+WHERE grupo='$grupo' and cod_curso=cod_grupo AND B1.cod_programa='003' and cod_motivo='6' GROUP BY nombre_grupo order by nombre_grupo)as transporte
+
+ON(total.nombre_grupo=transporte.nombre_grupo)
+
+)as interna1
+
+left join
+
+(select calamidad.nombre_grupo, calamidad, estudio
+from
+(SELECT nombre_grupo, sum (inasistencias) as calamidad
+          FROM vi_inasistencias A1 , v_grupo B1 
+WHERE grupo='$grupo' and cod_curso=cod_grupo AND B1.cod_programa='003' and cod_motivo ='2' GROUP BY nombre_grupo order by nombre_grupo)as calamidad
+
+left join 
+
+(SELECT nombre_grupo, sum(inasistencias)as estudio
+          FROM vi_inasistencias A1 , v_grupo B1 
+WHERE grupo='$grupo' and cod_curso=cod_grupo AND B1.cod_programa='003' and cod_motivo='4' GROUP BY nombre_grupo order by nombre_grupo)as estudio
+ON(calamidad.nombre_grupo=estudio.nombre_grupo)) interna2
+
+ON(interna1.nombre_grupo=interna2.nombre_grupo)
+)dos
+
+ON(uno.nombre_grupo=dos.nombre_grupo))justificadas
+
+LEFT JOIN
+
+(select uno.nombre_grupo, trabajo,transportemenos,nojustificada, uno.inasistencias 
+from
+(select total.nombre_grupo, inasistencias, trabajo
+from
+(SELECT nombre_grupo, SUM (inasistencias) as inasistencias
+          FROM vi_inasistencias A1 , v_grupo B1 
+WHERE grupo='$grupo' and cod_curso=cod_grupo AND B1.cod_programa='003' GROUP BY nombre_grupo order by nombre_grupo)as total
+
+left join 
+
+(SELECT nombre_grupo, sum(inasistencias)as trabajo
+          FROM vi_inasistencias A1 , v_grupo B1 
+WHERE grupo='$grupo' and cod_curso=cod_grupo AND B1.cod_programa='003' and cod_motivo='3' GROUP BY nombre_grupo order by nombre_grupo)as trabajo
+ON(total.nombre_grupo=trabajo.nombre_grupo)) as uno
+
+
+left join
+
+(select interna1.nombre_grupo, inasistencias, nojustificada, transportemenos
+from
+
+(select total.nombre_grupo, inasistencias, transportemenos
+from
+(SELECT nombre_grupo, SUM (inasistencias) as inasistencias
+          FROM vi_inasistencias A1 , v_grupo B1 
+WHERE grupo='$grupo' and cod_curso=cod_grupo AND B1.cod_programa='003' GROUP BY nombre_grupo order by nombre_grupo)as total
+
+left join 
+
+(SELECT nombre_grupo, sum(inasistencias)as transportemenos
+          FROM vi_inasistencias A1 , v_grupo B1 
+WHERE grupo='$grupo' and cod_curso=cod_grupo AND B1.cod_programa='003' and cod_motivo='5' GROUP BY nombre_grupo order by nombre_grupo)as transportemenos
+
+ON(total.nombre_grupo=transportemenos.nombre_grupo)
+
+)as interna1
+
+left join
+
+(SELECT nombre_grupo, sum(inasistencias) as nojustificada
+          FROM vi_inasistencias A1 , v_grupo B1 
+WHERE grupo='$grupo' and cod_curso=cod_grupo AND B1.cod_programa='003' and cod_motivo ='0' GROUP BY nombre_grupo order by nombre_grupo) interna2
+
+ON(interna1.nombre_grupo=interna2.nombre_grupo)
+)dos
+
+ON(uno.nombre_grupo=dos.nombre_grupo))nojustificadas
+
+
+ON(justificadas.nombre_grupo=nojustificadas.nombre_grupo)";
       return DB::query($sql);
     }
     
     /*Lista las inasitencias por componente en un programa*/
   function  allComponentes($codPrograma) {
-       // echo "<br>".$grupo."  consulta";
-     /*  
-     $sql = "select count(asiste), asiste, nombre_componente 
-from cu_asistencias, (select cod_componente, nombre_componente from v_componentes_programas where semestre='1' and cod_programa='003') as componente 
-where substr(codigo,1,6)= cod_componente and asiste=false and cod_interno IN (select cod_interno from v_estudiantes_activos) group by nombre_componente,asiste";
-    */
-   $sql= "select a1.nombre_componente, excusamedica, calamidad, transporte, estudio, nojustificada, trabajo, transportemenos, totalinasistencia
+    
+$sql= "select a3.cod_componente, a1.nombre_componente, excusamedica, calamidad, transporte, estudio, nojustificada, trabajo, transportemenos, totalinasistencia
 from inasistencia_componente_j a1 , inasistencia_componente_noj a2, total_inasistencia_componente a3
 where 
 
@@ -58,6 +158,16 @@ a1.nombre_componente=a2.nombre_componente and a1.nombre_componente=a3.nombre_com
      
       return DB::query($sql);
     }
+    
+function  nombre($param) {
+    
+ $sql= "select cod_componente, nombre_componente
+ from total_inasistencia_componente
+ where cod_componente='$param'";
+     
+      return DB::query($sql);
+}
+    
     
 function  allMotivoNoJustificadas($codNoJustificadas) {
        // echo "<br>".$grupo."  consulta";
@@ -98,7 +208,7 @@ where substr(codigo,1,6)= cod_componente and asiste=false  and cod_motivo='$codN
 			}
 			return $asistencias;
 		}
-
+/*cada componente tiene una inasistencia con su motivo, esta funcion me mostrara que cursos han generado esa inasistencia para esa clase*/
 
 function cursoPorComponenteAsistencia($param){
   
@@ -113,7 +223,7 @@ from
    from
         (SELECT (grupo||'-'||subgrupo)as curso, inasistencia from a_grupos, (select substr(cu.codigo,7,3) as       
 nombre,  count (asiste)as inasistencia from cu_asistencias cu where substr(cu.codigo,1,6)=(select     cod_componente 
-from  v_componentes_programas where nombre_componente='$param' and semestre='1' and     
+from  v_componentes_programas where cod_componente='$param' and semestre='1' and     
 cod_programa='003') and substr(cu.codigo,7,3) IN (select codigo from     a_grupos where cod_programa='003')     
 and asiste=false and cod_interno IN (select cod_interno from     a_persona where cod_estado='11') group by    
 nombre order by nombre asc)as pi where codigo=nombre and cod_programa='003') asistencia
@@ -121,7 +231,7 @@ left join
    (SELECT (grupo||'-'||subgrupo)as curso, inasistencia2 from a_grupos, 
    (select substr(cu.codigo,7,3) as nombre, count (asiste)as inasistencia2 from cu_asistencias cu where substr   
 (cu.codigo,1,6)=(select cod_componente from v_componentes_programas where    
-nombre_componente='$param' and semestre='1' and cod_programa='003') and substr  
+cod_componente='$param' and semestre='1' and cod_programa='003') and substr  
 (cu.codigo,7,3) IN (select codigo from a_grupos where cod_programa='003') and asiste=false and  cod_motivo='1' 
 and cod_interno IN (select cod_interno from a_persona where cod_estado='11') group by    nombre order by 
 nombre asc)as pi where codigo=nombre and cod_programa='003') motivo1
@@ -140,7 +250,7 @@ left join
    (SELECT (grupo||'-'||subgrupo)as curso, inasistencia2 from a_grupos, 
    (select substr(cu.codigo,7,3) as nombre, count (asiste)as inasistencia2 from cu_asistencias cu where substr   
 (cu.codigo,1,6)=(select cod_componente from v_componentes_programas where    
-nombre_componente='$param' and semestre='1' and cod_programa='003') and substr  
+cod_componente='$param' and semestre='1' and cod_programa='003') and substr  
 (cu.codigo,7,3) IN (select codigo from a_grupos where cod_programa='003') and asiste=false and    cod_motivo='2' 
 and cod_interno IN (select cod_interno from a_persona where cod_estado='11') group by    nombre order by 
 nombre asc)as pi where codigo=nombre and cod_programa='003') motivo1
@@ -153,7 +263,7 @@ from
    from
         (SELECT (grupo||'-'||subgrupo)as curso, inasistencia from a_grupos, (select substr(cu.codigo,7,3) as       
 nombre,  count (asiste)as inasistencia from cu_asistencias cu where substr(cu.codigo,1,6)=(select     cod_componente 
-from  v_componentes_programas where nombre_componente='$param' and semestre='1' and     
+from  v_componentes_programas where cod_componente='$param' and semestre='1' and     
 cod_programa='003') and substr(cu.codigo,7,3) IN (select codigo from     a_grupos where cod_programa='003')     
 and asiste=false and cod_interno IN (select cod_interno from     a_persona where cod_estado='11') group by    
 nombre order by nombre asc)as pi where codigo=nombre and cod_programa='003') asistencia
@@ -161,7 +271,7 @@ left join
    (SELECT (grupo||'-'||subgrupo)as curso, inasistencia2 from a_grupos, 
    (select substr(cu.codigo,7,3) as nombre, count (asiste)as inasistencia2 from cu_asistencias cu where substr   
 (cu.codigo,1,6)=(select cod_componente from v_componentes_programas where    
-nombre_componente='$param' and semestre='1' and cod_programa='003') and substr  
+cod_componente='$param' and semestre='1' and cod_programa='003') and substr  
 (cu.codigo,7,3) IN (select codigo from a_grupos where cod_programa='003') and asiste=false and  cod_motivo='4' 
 and cod_interno IN (select cod_interno from a_persona where cod_estado='11') group by    nombre order by 
 nombre asc)as pi where codigo=nombre and cod_programa='003') motivo1
@@ -171,7 +281,7 @@ left join
    from
         (SELECT (grupo||'-'||subgrupo)as curso, inasistencia from a_grupos, (select substr(cu.codigo,7,3) as       
 nombre,      count (asiste)as inasistencia from cu_asistencias cu where substr(cu.codigo,1,6)=(select     
-cod_componente from      v_componentes_programas where nombre_componente='$param' and 
+cod_componente from      v_componentes_programas where cod_componente='$param' and 
 semestre='1' and     cod_programa='003') and substr(cu.codigo,7,3) IN (select codigo from     a_grupos where 
 cod_programa='003')     and asiste=false and cod_interno IN (select cod_interno from     a_persona where 
 cod_estado='11') group by    nombre order by nombre asc)as pi where codigo=nombre and cod_programa='003') 
@@ -180,7 +290,7 @@ left join
    (SELECT (grupo||'-'||subgrupo)as curso, inasistencia2 from a_grupos, 
    (select substr(cu.codigo,7,3) as nombre, count (asiste)as inasistencia2 from cu_asistencias cu where substr   
 (cu.codigo,1,6)=(select cod_componente from v_componentes_programas where    
-nombre_componente='$param' and semestre='1' and cod_programa='003') and substr  
+cod_componente='$param' and semestre='1' and cod_programa='003') and substr  
 (cu.codigo,7,3) IN (select codigo from a_grupos where cod_programa='003') and asiste=false and    cod_motivo='6' 
 and cod_interno IN (select cod_interno from a_persona where cod_estado='11') group by    nombre order by 
 nombre asc)as pi where codigo=nombre and cod_programa='003') motivo1
@@ -198,7 +308,7 @@ from
    from
         (SELECT (grupo||'-'||subgrupo)as curso, inasistencia from a_grupos, (select substr(cu.codigo,7,3) as       
 nombre,  count (asiste)as inasistencia from cu_asistencias cu where substr(cu.codigo,1,6)=(select     
-cod_componente from  v_componentes_programas where nombre_componente='$param' and 
+cod_componente from  v_componentes_programas where cod_componente='$param' and 
 semestre='1' and     cod_programa='003') and substr(cu.codigo,7,3) IN (select codigo from     a_grupos where 
 cod_programa='003')     and asiste=false and cod_interno IN (select cod_interno from     a_persona where 
 cod_estado='11') group by    nombre order by nombre asc)as pi where codigo=nombre and cod_programa='003') 
@@ -207,7 +317,7 @@ left join
    (SELECT (grupo||'-'||subgrupo)as curso, inasistencia2 from a_grupos, 
    (select substr(cu.codigo,7,3) as nombre, count (asiste)as inasistencia2 from cu_asistencias cu where substr   
 (cu.codigo,1,6)=(select cod_componente from v_componentes_programas where    
-nombre_componente='$param' and semestre='1' and cod_programa='003') and substr  
+cod_componente='$param' and semestre='1' and cod_programa='003') and substr  
 (cu.codigo,7,3) IN (select codigo from a_grupos where cod_programa='003') and asiste=false and  cod_motivo='3' 
 and cod_interno IN (select cod_interno from a_persona where cod_estado='11') group by    nombre order by 
 nombre asc)as pi where codigo=nombre and cod_programa='003') motivo1
@@ -218,7 +328,7 @@ left join
    from
         (SELECT (grupo||'-'||subgrupo)as curso, inasistencia from a_grupos, (select substr(cu.codigo,7,3) as       
 nombre,      count (asiste)as inasistencia from cu_asistencias cu where substr(cu.codigo,1,6)=(select     
-cod_componente from      v_componentes_programas where nombre_componente='$param' and 
+cod_componente from      v_componentes_programas where cod_componente='$param' and 
 semestre='1' and     cod_programa='003') and substr(cu.codigo,7,3) IN (select codigo from     a_grupos where 
 cod_programa='003')     and asiste=false and cod_motivo='0' and cod_interno IN (select cod_interno from     a_persona 
 where cod_estado='11') group by    nombre order by nombre asc)as pi where codigo=nombre and 
@@ -227,7 +337,7 @@ left join
    (SELECT (grupo||'-'||subgrupo)as curso, inasistencia2 from a_grupos, 
    (select substr(cu.codigo,7,3) as nombre, count (asiste)as inasistencia2 from cu_asistencias cu where substr   
 (cu.codigo,1,6)=(select cod_componente from v_componentes_programas where    
-nombre_componente='$param' and semestre='1' and cod_programa='003') and substr  
+cod_componente='$param' and semestre='1' and cod_programa='003') and substr  
 (cu.codigo,7,3) IN (select codigo from a_grupos where cod_programa='003') and asiste=false and    cod_motivo='5' 
 and cod_interno IN (select cod_interno from a_persona where cod_estado='11') group by    nombre order by 
 nombre asc)as pi where codigo=nombre and cod_programa='003') motivo1

@@ -3305,7 +3305,6 @@ String.implement({
 				value = val.substr(index + 1),
 				keys = index < 0 ? [''] : val.substr(0, index).match(/([^\]\[]+|(\B)(?=\]))/g),
 				obj = object;
-
 			if (decodeValues) value = decodeURIComponent(value);
 			keys.each(function(key, i){
 				if (decodeKeys) key = decodeURIComponent(key);

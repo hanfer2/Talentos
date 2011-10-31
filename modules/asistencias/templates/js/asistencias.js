@@ -133,23 +133,5 @@ App.AsistenciasController = {
 	}
 }
 
-function componentes(){
-    alert("hola");
-		$("#table-inasistenciasGeneral").dataTable(
-		
-			{"fnRowCallback": function(nRow, aData, iDisplayIndex, iDisplayIndexFull){
-				var totales = {'j':0, 'i':0};
-				$(".asistenciaJustificada", nRow).each(function(){
-					totales.j += parseInt(this.innerHTML);
-				})
-				$(".total-asistenciasJustificadas",nRow).html(totales.j);
-				$(".asistenciaInjustificada", nRow).each(function(){
-					totales.i += parseInt(this.innerHTML);
-				})
-				$(".total-asistenciasInjustificadas",nRow).html(totales.i);
-				$(".total-clasesInasistidas",nRow).html(totales.i + totales.j);
-				return nRow;
-			}}
-		);
-	}
+
 

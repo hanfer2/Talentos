@@ -28,7 +28,8 @@
         <td class="date">{$programa.fecha_cierre_1|date_format}</td>
         <td class="date">{$programa.fecha_inicio_2|date_format}</td>
         <td class="date">{$programa.fecha_cierre_2|date_format}</td>
-        <td>{if date_compare($programa.fecha_cierre_2, date("Y-M-D")) lt 0 and date_contains($programa.fecha_inicio_1, $programa.fecha_cierre_2)}&#10004;{else}&#10008;{/if}</td>
+        <td>{if ($programa.fecha_cierre_2 > "2011-06-27")}&#10004;{else}&#10008;{/if}</td>
+      <!--{'now'|date_format}        -->
       </tr>
       {/foreach}
     </tbody>

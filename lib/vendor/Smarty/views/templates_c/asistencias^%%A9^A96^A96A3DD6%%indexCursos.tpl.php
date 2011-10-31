@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.26, created on 2011-10-19 16:16:46
+<?php /* Smarty version 2.6.26, created on 2011-10-31 16:37:44
          compiled from ./modules/asistencias/templates//indexCursos.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'link_to', './modules/asistencias/templates//indexCursos.tpl', 31, false),array('function', 'include_partial', './modules/asistencias/templates//indexCursos.tpl', 49, false),array('modifier', 'date_format', './modules/asistencias/templates//indexCursos.tpl', 35, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', './modules/asistencias/templates//indexCursos.tpl', 45, false),array('modifier', 'date_format', './modules/asistencias/templates//indexCursos.tpl', 59, false),array('function', 'include_partial', './modules/asistencias/templates//indexCursos.tpl', 63, false),)), $this); ?>
 <!-- <?php ob_start(); ?>
 	<?php if (is_super_admin_login ( )): ?>-->
 
@@ -20,41 +20,58 @@ unset($_smarty_tpl_vars);
   <h1>Listado de Asistencias Por Curso grupo <?php echo $this->_tpl_vars['g']['grupo']; ?>
 </h1>
  
-  <table class="table dataTable">
+ <table class='table dataTable non-paginable' id='table-inasistenciasGeneral'>
     <thead>
-      <tr><th rowspan="2" >Cursos</th>
-       <th rowspan="2">INASISTENCIAS</th>
-       <!--  <th colspan="2">1r Semestre</th><th colspan="2">2r Semestre</th>
-        <th rowspan="2">Activo</th>-->
+      <tr><th rowspan="3" >GRUPO</th>
+ <th colspan='10'>INASISTENCIAS</th>
+
+	</tr>
+	<tr>
+		<th colspan='5'>JUSTIFICADAS</th>
+		<th colspan='4'>INJUSTIFICADAS</th>
+		<th class='column-total' title='Total de Inasistencias' rowspan='3'>TOTAL INASISTENCIAS</th>
+	</tr>
+	<tr>
+    
+		
+		<th>EXCUSA MÉDICA</th>
+		<th>CALAMIDAD</th>
+    <th>ESTUDIO</th>
+    <th>TRANSPORTE+</th>
+		<th class='column-total' title='Total de Inasistencias Justificadas'>TOTAL</th>
+    
+		
+		<th>NO JUSTIFICADA</th>
+		<th>TRABAJO</th>
+    <th>TRANSPORTE-</th>
+		<th class='column-total' title='Total de Inasistencias No Justificadas'>TOTAL</th>
       </tr>
-     <!-- <tr>
-        <th>Fecha Inicio</th><th>Fecha Cierre</th>
-        <th>Fecha Inicio</th><th>Fecha Cierre</th>
-      </tr>-->
     </thead>
     <tbody>
 			<?php $_from = $this->_tpl_vars['grupo']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['grupo']):
 ?>
-      <tr>
+     <tr>
         <td><?php echo $this->_tpl_vars['grupo']['nombre_grupo']; ?>
 </td>
-        <td><?php echo $this->_tpl_vars['grupo']['inasistencias']; ?>
-
-          <!--<?php echo smarty_function_link_to(array('name' => $this->_tpl_vars['grupo']['grupo'],'action' => 'view','codigo' => $this->_tpl_vars['grupo']['codigo']), $this);?>
--->
-        </td>
-       <!-- 
-        <td class="date"><?php echo ((is_array($_tmp=$this->_tpl_vars['grupo']['fecha_inicio_1'])) ? $this->_run_mod_handler('date_format', true, $_tmp) : smarty_modifier_date_format($_tmp)); ?>
+        <td><?php echo ((is_array($_tmp=@$this->_tpl_vars['grupo']['excusamedica'])) ? $this->_run_mod_handler('default', true, $_tmp, 0) : smarty_modifier_default($_tmp, 0)); ?>
 </td>
-        <td class="date"><?php echo ((is_array($_tmp=$this->_tpl_vars['grupo']['fecha_cierre_1'])) ? $this->_run_mod_handler('date_format', true, $_tmp) : smarty_modifier_date_format($_tmp)); ?>
+        <td><?php echo ((is_array($_tmp=@$this->_tpl_vars['grupo']['calamidad'])) ? $this->_run_mod_handler('default', true, $_tmp, 0) : smarty_modifier_default($_tmp, 0)); ?>
 </td>
-        <td class="date"><?php echo ((is_array($_tmp=$this->_tpl_vars['grupo']['fecha_inicio_2'])) ? $this->_run_mod_handler('date_format', true, $_tmp) : smarty_modifier_date_format($_tmp)); ?>
+        <td><?php echo ((is_array($_tmp=@$this->_tpl_vars['grupo']['estudio'])) ? $this->_run_mod_handler('default', true, $_tmp, 0) : smarty_modifier_default($_tmp, 0)); ?>
 </td>
-        <td class="date"><?php echo ((is_array($_tmp=$this->_tpl_vars['grupo']['fecha_cierre_2'])) ? $this->_run_mod_handler('date_format', true, $_tmp) : smarty_modifier_date_format($_tmp)); ?>
+         <td><?php echo ((is_array($_tmp=@$this->_tpl_vars['grupo']['transporte'])) ? $this->_run_mod_handler('default', true, $_tmp, 0) : smarty_modifier_default($_tmp, 0)); ?>
 </td>
-        <td><?php if (date_compare ( $this->_tpl_vars['grupo']['fecha_cierre_2'] , date ( "Y-M-D" ) ) < 0 && date_contains ( $this->_tpl_vars['programa']['fecha_inicio_1'] , $this->_tpl_vars['programa']['fecha_cierre_2'] )): ?>&#10004;<?php else: ?>&#10008;<?php endif; ?></td>
-        -->
+          <td class='total total-asistenciasJustificadas'></td>
+         <td><?php echo ((is_array($_tmp=@$this->_tpl_vars['grupo']['nojustificada'])) ? $this->_run_mod_handler('default', true, $_tmp, 0) : smarty_modifier_default($_tmp, 0)); ?>
+</td>
+          <td><?php echo ((is_array($_tmp=@$this->_tpl_vars['grupo']['trabajo'])) ? $this->_run_mod_handler('default', true, $_tmp, 0) : smarty_modifier_default($_tmp, 0)); ?>
+</td>
+           <td><?php echo ((is_array($_tmp=@$this->_tpl_vars['grupo']['transportemenos'])) ? $this->_run_mod_handler('default', true, $_tmp, 0) : smarty_modifier_default($_tmp, 0)); ?>
+</td>
+             <td class='total total-asistenciasInjustificadas'></td>
+            <td><?php echo ((is_array($_tmp=@$this->_tpl_vars['grupo']['inasistencias'])) ? $this->_run_mod_handler('default', true, $_tmp, 0) : smarty_modifier_default($_tmp, 0)); ?>
+</td>
       </tr>
       <?php endforeach; endif; unset($_from); ?>
     </tbody>
