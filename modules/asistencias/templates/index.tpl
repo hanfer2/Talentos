@@ -8,7 +8,7 @@
 {else}
 
 <div class="ui-widget decorated">
-  <h1>Listado de Asistencias Por Grupo</h1>
+  <h1>Listado de Asistencias Por Grupo PROBEMOS A VER QIE PASA</h1>
  
   <table class='table dataTable non-paginable' id='table-inasistenciasGeneral'>
     <thead>

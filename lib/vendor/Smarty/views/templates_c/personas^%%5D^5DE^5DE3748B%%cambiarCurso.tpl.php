@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-07-05 14:30:14
+<?php /* Smarty version 2.6.26, created on 2011-11-16 16:10:40
          compiled from modules/estudiantes/templates/cambiarCurso.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'html_select', 'modules/estudiantes/templates/cambiarCurso.tpl', 10, false),array('function', 'to_sql', 'modules/estudiantes/templates/cambiarCurso.tpl', 22, false),)), $this); ?>

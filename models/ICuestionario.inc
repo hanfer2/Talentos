@@ -7,6 +7,18 @@
 			return new IComponente();
 		}
 
+
+
+/*funcion que me retorna el codigo interno de un estudiante que presento la prueba, 
+ * que se encuentra en 	i_cuestionarios_diligenciados*/
+
+function codigoInterno_estudiantePrueba($prueba){
+  
+$sql ="select cod_interno from i_cuestionarios_diligenciados where cod_prueba='$prueba'";
+
+return DB::query($sql);
+
+}
 		/**
 		 * Permite la actualizacion de un cuestionario.
 		 * Si el cuestionario ya tiene registros calificados, actualizara cada pregunta existente;
@@ -168,11 +180,15 @@
 			//consultamos la cantidad de respuestas del usuario en la prueba
 			$db = DB::instance();
 		
-			$sql = "SELECT numeral,a, b, c, d, e, componentes.nombre as nombre_componente, respuesta
+			$sql = "SELECT numeral ,a, b, c, d, e, componentes.nombre as nombre_componente, respuesta
 							FROM ( SELECT * FROM ".Config::Get(__CLASS__,'Respuesta'). " WHERE cod_interno = '$cod_interno' ) respuestas ".
 						  " RIGHT JOIN ".Config::Get(__CLASS__,'Pregunta') . " preguntas ON (cod_pregunta = preguntas.codigo) ".
 						  " INNER JOIN ".Config::Get('IComponente') . " componentes ON (cod_componente = componentes.codigo) ".
 						  " WHERE cod_prueba = '$cod_prueba' AND valida IS TRUE ORDER BY cod_componente, numeral";
+              
+        
+     // echo $sql;
+              
 			return $db->table_query($sql, "nombre_componente");
 		}
 		
@@ -263,7 +279,8 @@
 		* @param int $cod_simulacrio codigo del simulacro que se diligencio.
 		* @param array $respuestas respuestas escogidas por el estudiante.
 		* @param int $cod_digitador codigo interno del digitador que diligencio el cuestionario.
-		*/
+    * 
+		**/
 		function diligenciar($cod_interno, $cod_prueba, $respuestas, $cod_digitador){
 			$this->_guardarRespuestas($cod_interno, $respuestas);
 			$data = array('cod_interno'=>$cod_interno, 'cod_prueba'=>$cod_prueba, 'cod_digitador'=>$cod_digitador);
@@ -282,7 +299,7 @@
 			$sql = sql_insert_from_array(Config::Get('TIcfes'),$icfes);		
 			DB::query($sql);
 		}
-		
+		/*probar con estas funciones para mirar si funciona con ellas */
 		function registrarRespuestasPorEstudiante($cod_interno, $cod_prueba, $preguntas, $respuestas){
 			$resultados = ICuestionario::_calificarRespuestas($preguntas, $respuestas);
 			ICuestionario::_guardarPuntaje($cod_interno, $cod_prueba, $resultados['componentes']);
@@ -333,7 +350,7 @@
 					$resultados['cualitativos'][$cod_componente][$cod_cualitativo] = $resumen['CORRECTAS'] * 100 / $resumen['TOTAL'];
 				}
 			endforeach;
-			
+			print_r($resultados);
 			return $resultados;
 		}
 		

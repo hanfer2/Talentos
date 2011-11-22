@@ -27,7 +27,7 @@
 		 {else}
 		 <form action="{url_for action=update cod_prueba=$cod_prueba cod_componente=$cod_componente}" method="post" id="form-registrarCuestionario" onsubmit="return confirmarCreacionCuestionario();" class='ui-form'>
 		 {foreach from=$preguntas item=pregunta name=preguntas}
-				{include file='add.form.tpl' pregunta=$pregunta letras=$letras flag=$smarty.foreach.preguntas.iteration}
+				{include_partial file='add.form.tpl' pregunta=$pregunta letras=$letras flag=$smarty.foreach.preguntas.iteration}
 		 {/foreach}
 		 			<div>
 		 		{if !$estaCalificada}

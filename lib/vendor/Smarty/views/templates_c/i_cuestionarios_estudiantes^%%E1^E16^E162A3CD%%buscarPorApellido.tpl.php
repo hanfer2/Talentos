@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-09-23 10:42:13
+<?php /* Smarty version 2.6.26, created on 2011-11-02 15:12:31
          compiled from modules/personas/templates/buscarPorApellido.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'modules/personas/templates/buscarPorApellido.tpl', 21, false),array('modifier', 'default', 'modules/personas/templates/buscarPorApellido.tpl', 25, false),)), $this); ?>

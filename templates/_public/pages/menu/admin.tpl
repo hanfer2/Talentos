@@ -108,6 +108,8 @@
             <li><span class="jm-title">Ingreso de Notas</span></li>
             <li>{link_to name="Diligenciar Cuestionario" controller=i_cuestionarios_estudiantes action=add}</li>
             <li>{link_to name="Revisar Cuestionarios" controller=i_cuestionarios action=check disabled=disabled}</li>
+             <li>{link_to name="prueba para notas" controller=i_cuestionarios_estudiantes action=prueba}</li>
+            <li>{link_to name="Calcular prueba actual" controller=i_cuestionarios action=calcular}</li>
           </ul>
         </li>
         {/if}

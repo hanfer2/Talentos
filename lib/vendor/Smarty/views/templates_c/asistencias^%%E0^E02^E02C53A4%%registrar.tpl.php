@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-09-07 10:59:20
+<?php /* Smarty version 2.6.26, created on 2011-11-16 16:37:14
          compiled from ./modules/asistencias/templates//registrar.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'include_template', './modules/asistencias/templates//registrar.tpl', 3, false),array('function', 'url_for', './modules/asistencias/templates//registrar.tpl', 18, false),array('function', 'persona_url', './modules/asistencias/templates//registrar.tpl', 31, false),array('function', 'html_select', './modules/asistencias/templates//registrar.tpl', 34, false),array('function', 'link_to', './modules/asistencias/templates//registrar.tpl', 49, false),array('modifier', 'date_format', './modules/asistencias/templates//registrar.tpl', 13, false),array('modifier', 'escape', './modules/asistencias/templates//registrar.tpl', 16, false),)), $this); ?>

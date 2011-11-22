@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-07-12 09:29:31
+<?php /* Smarty version 2.6.26, created on 2011-11-21 21:18:15
          compiled from ./modules/icfes/templates//reporteDetallado.form.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'include_template', './modules/icfes/templates//reporteDetallado.form.tpl', 2, false),array('function', 'html_select', './modules/icfes/templates//reporteDetallado.form.tpl', 32, false),array('modifier', 'underscorify', './modules/icfes/templates//reporteDetallado.form.tpl', 5, false),array('modifier', 'lower', './modules/icfes/templates//reporteDetallado.form.tpl', 5, false),)), $this); ?>

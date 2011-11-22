@@ -1,5 +1,6 @@
 <?php
-
+//require_once 'IRespuestas.inc';
+AppLoader::load_model('Extra/IRespuestas');
 /**
  * Clase ICuestionariosEstudiantesController extendida de Controller
  */
@@ -9,6 +10,7 @@ class ICuestionariosEstudiantesController extends Controller {
    * Constructor de la Clase ICuestionariosEstudiantesController
    */
   function __construct() {
+    
     parent::__construct();
     $this->includeModel('TIcfes', 'ICompetencia', 'ICuestionario');
 		$this->vista->setTitle('Pruebas');
@@ -109,8 +111,8 @@ class ICuestionariosEstudiantesController extends Controller {
   }
 
   function delete(){
-		if($_SERVER['REQUEST_METHOD'] != 'POST')
-			$this->vista->acceso_restringido();   
+		//if($_SERVER['REQUEST_METHOD'] != 'POST')
+		//	$this->vista->acceso_restringido();   
 			
 			if($this->params['cedula'] != null){
 				$cedula = $this->params['cedula'];
@@ -146,7 +148,20 @@ class ICuestionariosEstudiantesController extends Controller {
 		if(!is_xhr())
 			$this->vista->display();
 	}
+  
+  
+/*pruebas para las funciones de las respuestas para los simulacros, se llamara atravez del menu, mandaremos 
+ * los codigo internos con la prueba que estan en la tabla i_cuestionarios_diligenciados, para ello primero debemos consultar ese listado*/
+ 
 
+function prueba(){
+  // AppLoader::load_model('Extra/IRespuestas');
+//hallar estudiantes de la prueba actualq eu ya alla llenado el simulacro con respuestas
+  $estudiantesD=ICuestionario::codigoInterno_estudiantePrueba('15');
+  //print_r ($estudiantesD);
+  echo "miremos si sale en esa vaina";
+  GeneraPuntaje::GeneraPuntaje('15');
+}
 }
 
 ?>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-07-25 12:28:56
+<?php /* Smarty version 2.6.26, created on 2011-11-17 00:09:15
          compiled from modules/sesion/templates/login.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'url_for', 'modules/sesion/templates/login.tpl', 11, false),)), $this); ?>

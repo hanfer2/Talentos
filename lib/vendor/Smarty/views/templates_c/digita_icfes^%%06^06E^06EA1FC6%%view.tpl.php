@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-07-06 16:54:13
+<?php /* Smarty version 2.6.26, created on 2011-11-01 15:05:26
          compiled from ./modules/digita_icfes/templates//view.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'link_to', './modules/digita_icfes/templates//view.tpl', 8, false),)), $this); ?>

@@ -29,20 +29,20 @@
 			$this->cod_prueba = $cod_prueba;
 			$this->db = DB::instance();
 			
-			$this->init();
+			GeneraPuntaje::init();
 			
 			Logger::debug("= Borrando Datos Previos...", __LINE__);
-			$this->delete();
+			GeneraPuntaje::delete();
 			
-			$this->competencias = $this->totalPreguntasPorCompetencia();
-			$this->cualitativos = $this->totalPreguntasPorCualitativo();
+			$this->competencias = GeneraPuntaje::totalPreguntasPorCompetencia();
+			$this->cualitativos = GeneraPuntaje::totalPreguntasPorCualitativo();
 			
 			$this->nombresComponentes =DB::grouped_query("SELECT codigo, nombre FROM i_componentes",'codigo');
 			$this->nombresCompetencias =DB::grouped_query("SELECT codigo, nombre FROM i_competencias",'codigo');
 			$this->nombresCualitativos =DB::grouped_query("SELECT codigo, nombre FROM i_cualitativos",'codigo');
 
-			$this->totalPreguntasPorComponentes = $this->getTotalPreguntasPorComponente();
-			$estudiantes = $this->estudiantes();
+			$this->totalPreguntasPorComponentes = GeneraPuntaje::getTotalPreguntasPorComponente();
+			$estudiantes = GeneraPuntaje::estudiantes();
 			$this->totalEstudiantes = count($estudiantes);
 			
 			$this->preguntas = DB::table_query("SELECT * FROM ".Config::Get('ICuestionario','Pregunta'). " WHERE cod_prueba ='{$this->cod_prueba}'");
@@ -52,23 +52,23 @@
 
 				$this->competenciasIndividuales = array();
 				$this->cualitativosIndividuales = array();
-				$this->estudiantes[$cod_interno] = $this->datosEstudiante($cod_interno);
-				$respuestas = $this->consultarRespuestasPorEstudiante($cod_interno);
-				$resultados = $this->calificarRespuestas($cod_interno, $respuestas);
-				$this->guardarPuntaje($cod_interno, $resultados);
+				$this->estudiantes[$cod_interno] = GeneraPuntaje::datosEstudiante($cod_interno);
+				$respuestas = GeneraPuntaje::consultarRespuestasPorEstudiante($cod_interno);
+				$resultados = GeneraPuntaje::calificarRespuestas($cod_interno, $respuestas);
+				GeneraPuntaje::guardarPuntaje($cod_interno, $resultados);
 				
-				if($this->procesarCalificadores){
-					$this->calcularCompetencias($cod_interno);
-					$this->calcularCualitativos($cod_interno);
-				}
-				$this->imprimirResultadosEstudiante($cod_interno, $resultados);
+				//if($this->procesarCalificadores){
+					GeneraPuntaje::calcularCompetencias($cod_interno);
+					GeneraPuntaje::calcularCualitativos($cod_interno);
+				//}
+				GeneraPuntaje::imprimirResultadosEstudiante($cod_interno, $resultados);
 			}
 			echo "<hr/>";
 			
-			if($this->procesarCalificadores){
-				$this->procesarCompetencias();
-				$this->procesarCualitativos();
-			}
+		//	if($this->procesarCalificadores){
+				GeneraPuntaje::procesarCompetencias();
+				GeneraPuntaje::procesarCualitativos();
+		//	}
 		}
 		
 		function delete(){
@@ -93,7 +93,7 @@
 		}
 		
 		function init(){
-			$this->definirComponentes();
+			GeneraPuntaje::definirComponentes();
 			foreach($this->componentes as $componente){
 				$this->estadisticasPorPregunta['GENERAL'][$componente] = array('CORRECTAS'=>0, 'INCORRECTAS'=>0,'NULAS'=>0, 'VACIAS'=>0, 'TOTAL'=>0);
 			}
@@ -112,7 +112,7 @@
 		}
 		
 		function imprimirResultadosEstudiante($cod_interno, $resultados){
-			$datos = $this->consultarDatoEstudiante($cod_interno);
+			$datos = GeneraPuntaje::consultarDatoEstudiante($cod_interno);
 			echo "<div style='clear:both'><h4 style='color:#333; border-bottom: 1px solid #666'>[".$datos['nombre_grupo']."] ".$datos['cedula']."- ".$datos['fullname']."</h4>";
 			echo "<div>";
 			echo "<table class='table' style='border:1px solid #333'><thead style='background-color:#DDD'><tr><th>Componente</th><th>Nulas</th><th>Vacias</th><th>Incorrectas</th><th>Correctas</th><th>PUNTAJE</th></tr></thead><tbody>";
@@ -179,17 +179,17 @@
 			$adapter = array(1=>'biologia', 2=>'fisica',3=>'quimica',4=>'matematica',
 											 5=>'geografia',6=>'lenguaje',7=>'sociales',8=>'filosofia',9=>'interdisciplinar');
 			$icfes = array('cod_interno'=>$cod_interno, 'tipo'=>$this->cod_prueba, 
-										 'num_registro_icfes'=>zeropad($this->cod_prueba, 2)."-".$this->consultarDatoEstudiante($cod_interno, 'cedula'));
+										 'num_registro_icfes'=>zeropad($this->cod_prueba, 2)."-".GeneraPuntaje::consultarDatoEstudiante($cod_interno, 'cedula'));
 			
 			foreach($puntajes as $cod_componente=>$puntaje){
 				$icfes[$adapter[$cod_componente]] = number_format($puntaje['TOTAL'],2);
 			}	
 			$sql = sql_insert_from_array(Config::Get('TIcfes'),$icfes);		
-			if($this->debug){
-				Logger::debug($sql);
-			}else{
+		//	if($this->debug){
+			//	Logger::debug($sql);
+		//	}else{
 				$this->db->query($sql);
-			}
+		//	}
 		}
 		
 		function registrarRespuestasPorEstudiante($cod_interno, $respuestas){
@@ -230,8 +230,8 @@
 				debug($pregunta);
 				exit();
 			}
-			$curso = $this->consultarDatoEstudiante($cod_interno,'cod_curso');
-			$grupo = $this->consultarDatoEstudiante($cod_interno,'grupo');
+			$curso = GeneraPuntaje::consultarDatoEstudiante($cod_interno,'cod_curso');
+			$grupo = GeneraPuntaje::consultarDatoEstudiante($cod_interno,'grupo');
 			
 			$this->estadisticasPorPregunta['GENERAL'][$cod_componente][$valoracion]++;
 			/*
@@ -286,9 +286,9 @@
 				
 			foreach($this->preguntas as $pregunta){
 				$respuesta = $respuestas[$pregunta['codigo']];
-				$respuesta_escogida = $this->definirRespuestaEscogida($respuesta);
-				$valoracion = $this->esRespuestaCorrecta($respuesta_escogida, $respuesta['respuesta']);
-				$this->clasificarRespuesta($cod_interno, $respuesta, $pregunta, $valoracion);
+				$respuesta_escogida = GeneraPuntaje::definirRespuestaEscogida($respuesta);
+				$valoracion = GeneraPuntaje::esRespuestaCorrecta($respuesta_escogida, $respuesta['respuesta']);
+				GeneraPuntaje::clasificarRespuesta($cod_interno, $respuesta, $pregunta, $valoracion);
 				
 				$cod_componente = $pregunta['cod_componente'];
 				$resultados[$cod_componente][$valoracion]++;
@@ -310,11 +310,13 @@
 					$a['cod_competencia'] = $cod_competencia;
 					$a['puntaje'] = any($puntaje['CORRECTAS'],0);
 					$a['codigo'] = zeropad($this->cod_prueba,2).zeropad($cod_componente,2).zeropad($cod_competencia,2).$cod_interno;
-					
+				//	echo "VAMOS AMIRAR QUE SI  ESTE INSERTANDO ESTA VAINA"."<br/>";
 					$sql = sql_insert_from_array('i_puntajes_competencias',$a);
-					if($this->debug)
-						Logger::sql($sql);
-					else
+       // echo  "esto inserta"."<br/>".$sql;
+          
+					//if($this->debug)
+					//	Logger::sql($sql);
+					//else
 						$this->db->query($sql);
 				}
 //			debug($this->competenciasIndividuales);
@@ -331,9 +333,9 @@
 					$a['puntaje'] = any($puntaje['CORRECTAS'],0);
 					$a['codigo'] = zeropad($this->cod_prueba,2).zeropad($cod_componente,2).zeropad($cod_cualitativo,2).$cod_interno;
  				  $sql = sql_insert_from_array('i_puntajes_cualitativos',$a);
-					if($this->debug)
-						Logger::sql($sql);
-					else
+					//if($this->debug)
+					//	Logger::sql($sql);
+				//	else
 						$this->db->query($sql);
 				}
 //			debug($this->competenciasIndividuales);

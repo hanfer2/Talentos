@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-07-06 16:53:40
+<?php /* Smarty version 2.6.26, created on 2011-11-02 15:20:39
          compiled from ./modules/icfes/templates//listado_icfes.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'include_template', './modules/icfes/templates//listado_icfes.tpl', 2, false),array('function', 'persona_url', './modules/icfes/templates//listado_icfes.tpl', 31, false),array('function', 'math', './modules/icfes/templates//listado_icfes.tpl', 45, false),array('modifier', 'escape', './modules/icfes/templates//listado_icfes.tpl', 32, false),array('modifier', 'number_format', './modules/icfes/templates//listado_icfes.tpl', 43, false),)), $this); ?>

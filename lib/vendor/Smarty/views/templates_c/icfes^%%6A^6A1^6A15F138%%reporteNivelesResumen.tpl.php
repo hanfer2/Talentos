@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-09-06 14:28:24
+<?php /* Smarty version 2.6.26, created on 2011-11-16 17:25:04
          compiled from modules/icfes/templates/reporteNivelesResumen.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'underscorify', 'modules/icfes/templates/reporteNivelesResumen.tpl', 8, false),array('modifier', 'string_format', 'modules/icfes/templates/reporteNivelesResumen.tpl', 24, false),array('modifier', 'truncate', 'modules/icfes/templates/reporteNivelesResumen.tpl', 41, false),array('modifier', 'escape', 'modules/icfes/templates/reporteNivelesResumen.tpl', 41, false),array('modifier', 'default', 'modules/icfes/templates/reporteNivelesResumen.tpl', 88, false),array('function', 'link_to', 'modules/icfes/templates/reporteNivelesResumen.tpl', 34, false),array('function', 'math', 'modules/icfes/templates/reporteNivelesResumen.tpl', 55, false),array('function', 'nombre_programa', 'modules/icfes/templates/reporteNivelesResumen.tpl', 68, false),)), $this); ?>

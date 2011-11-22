@@ -26,7 +26,25 @@
 					 ORDER BY cod_pregunta ASC";
 		return DB::query($sql);
 	 }
+////otra qe no estaba
+///lista los componentes que haran parte de una pruba, simulacro
 
+function componentes($param){
+  
+  $sql="select distinct(cod_componente) from v_preguntas where cod_prueba='$param'";
+  
+  return DB::query($sql);
+  
+  }
+  ///muestra las competencias que se manejan por componente
+  function competencias($cod_prueba, $cod_componente){
+     $sql="SELECT cod_competencia from i_preguntas where cod_componente ='$cod_componente' AND cod_prueba='$cod_prueba'";
+  
+  return DB::query($sql);
+    
+  }
+  
+  
 	//PRUEBA SI UN ESTUDIANTE TIENE ASOCIADA UNA DETERMINADA PRUEBA.
    function	exists($cod_interno,	$tipo,	$num_registro_icfes	=	null) {
      $db	=	DB_new();
@@ -36,6 +54,10 @@
      $sql	=	sprintf("select count(*) from a_icfes where cod_interno = '%s' and tipo = '%s'",	pg_escape_string($cod_interno),	pg_escape_string($tipo))	.	$reg;
      return	$db->consultar_unico($sql)	>	0;
    }
+function llamarConsultarUnico($sql){
+   $db	=	DB_new();
+  return	$db->consulta($sql);
+}
 
    function	_componentes_in_aggregateFunction($function) {
      return	"
@@ -214,9 +236,11 @@
    
    //LISTADO DE CEDULAS DE ESTUDIANTES DE UN CURSO QUE PRESENTARON UNA DETERMINADA PRUEBA.
 		function estudiantesConIcfes($cod_curso, $cod_prueba) {
+     // echo "entra";
 			$sql = "SELECT cedula FROM " . Config::get('TEstudiante', 'TGrupo') .
 						 " WHERE cod_grupo = '$cod_curso' AND cod_interno IN (
 								SELECT cod_interno FROM " . Config::get(__CLASS__) . " where tipo = '$cod_prueba')";
+              //echo $sql;
 			return DB::aquery($sql);
 		}
     

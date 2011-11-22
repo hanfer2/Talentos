@@ -19,15 +19,17 @@
 	  * Listado de pruebas para el programa indicado por tipo
 	  */
 	 function index(){
+     
 		 $this->vista->addJS('jquery.ui.datepicker');
 		 if(isset($this->params['cod_programa'])){
+      // print_r ($this->params['cod_programa']);
 			 $pruebas = $this->ITipo->segunPrograma($this->params['cod_programa']);
 			 $simulacros = array();
 			 if($pruebas != null)
          foreach($pruebas as $prueba){
            if($prueba['tipo'] == I_TIPO_SIMULACRO )
             $simulacros[] = array('codigo'=>$prueba['codigo'], 'nombre'=>$prueba['nombre']);
-          }
+        }
          
 			 $tipos_icfes = array(I_TIPO_SIMULACRO=>'Simulacro', I_TIPO_OFICIAL=>'Prueba Oficial');
 			 $prueba_activa = $this->AppConfig->get('I.COD_CUESTIONARIO_ACTUAL');

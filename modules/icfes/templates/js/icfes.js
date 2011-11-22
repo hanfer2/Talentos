@@ -12,6 +12,7 @@ var chart_default_options = {
 Icfes ={
 	Individual:{
 		drawChart:function(){
+      
 			if($$("table-icfesIndividual").length > 0){
 				$$("table-icfesIndividual").highchart()
 			}

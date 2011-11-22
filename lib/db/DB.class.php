@@ -65,7 +65,7 @@ class DB {
    * @param array $options arreglo de configuraciones.
    * @return DB
    */
-  function &instance($options=array()) {
+  function &instance($options=array()){
     static $db = null;
     $const = &AppConst::getInstance();
     
@@ -112,7 +112,7 @@ class DB {
    *
    * @return 0|int 0 si falla la conexion, de lo contrario devuelve el id de conexion
    */
-  function conectar() {
+  function conectar(){
 
     /* conectamos al servidor */
 

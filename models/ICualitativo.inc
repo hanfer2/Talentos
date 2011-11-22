@@ -62,6 +62,7 @@
 						" WHERE cod_prueba = '$cod_prueba' AND cod_curso = '$cod_curso' ".
             " ORDER BY fullname, nombre_componente, nombre_cualitativo" ;
 			$registros = DB::table_query($sql);
+       if($registros != null){
 			foreach($registros as $registro){
 				$cedula = $registro['cedula'];
 				if(!isset($puntajes[$cedula])){
@@ -71,6 +72,7 @@
 				}
 				$puntajes[$cedula]['puntajes'][$registro['nombre_componente']][$registro['nombre_cualitativo']] = $registro['puntaje'];
 			}
+    }
 			return $puntajes;
 		}
 
@@ -92,14 +94,17 @@
 						  ) t_cualitativos USING (nombre_componente, cod_cualitativo)
 						 ORDER BY grupo, cod_curso, nombre_componente";	
 			$registros = DB::table_query($sql);
+      if($registros != null){
 			foreach($registros as $registro){
 				if(!isset($_puntajes[$registro['grupo']][$registro['cod_curso']])){
 					$_puntajes[$registro['grupo']][$registro['cod_curso']]['nombre'] = $registro['nombre_curso'];
 					$_puntajes[$registro['grupo']][$registro['cod_curso']]['puntajes'] = array();
 				}
+      
 				$a = array('puntaje'=>$registro['puntaje'],'cantidad'=>$registro['cantidad'],'preguntas'=>$registro['cantidad_preguntas']);
 				$_puntajes[$registro['grupo']][$registro['cod_curso']]['puntajes'][$registro['nombre_componente']][$registro['nombre_cualitativo']] = $a;
 			}
+    }
 			return $_puntajes;
 		}
 		
@@ -121,7 +126,7 @@
 						  ) t_cualitativos USING (nombre_componente, cod_cualitativo)
 						 ORDER BY grupo, nombre_componente";	
 			$registros = DB::table_query($sql);
-			
+    if($registros != null){
 			foreach($registros as $registro){
 				if(!isset($puntajes[$registro['grupo']])){
 					$puntajes[$registro['grupo']] = array();
@@ -129,6 +134,7 @@
 				$a = array('puntaje'=>$registro['puntaje'],'cantidad'=>$registro['cantidad'],'preguntas'=>$registro['cantidad_preguntas']);
 				$puntajes[$registro['grupo']][$registro['nombre_componente']][$registro['nombre_cualitativo']] = $a;
 			}
+    }
 			return $puntajes;
 		}
 		

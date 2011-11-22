@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-07-05 20:38:46
+<?php /* Smarty version 2.6.26, created on 2011-11-01 14:48:20
          compiled from templates/_public/web_debug.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'count', 'templates/_public/web_debug.tpl', 4, false),array('function', 'cycle', 'templates/_public/web_debug.tpl', 13, false),)), $this); ?>

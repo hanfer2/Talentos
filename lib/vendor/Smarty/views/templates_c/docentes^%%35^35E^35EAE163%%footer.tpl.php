@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-07-06 16:41:08
+<?php /* Smarty version 2.6.26, created on 2011-11-15 16:31:21
          compiled from templates/_public/footer.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'url_for', 'templates/_public/footer.tpl', 3, false),)), $this); ?>

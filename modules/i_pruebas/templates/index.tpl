@@ -24,9 +24,11 @@
         </tr>
 			</thead>
 			<tbody>
+        <!--Siempore esta tomando el codigo 10 cambie el que cambie, antes no tomaba nada-->
 			{foreach from=$pruebas item=prueba}
 				<tr>
-					<td><a class="nombre_prueba" href="{url_for action=view controller=icfes cod_prueba=$prueba.codigo}">{$prueba.nombre|escape}</a></td>
+           <input type="hidden" value="{$prueba.codigo}" id="codno"/>
+					<td><a class="nombre_prueba" href="{url_for action=view controller=icfes cod_prueba=$prueba.codigo}" id="elcodigo">{$prueba.nombre|escape}</a></td>
 					<td>{$prueba.tipo|capitalize}</td><td>{$prueba.fecha|date_format}</td>
 					<td><input type="checkbox" class="chk-visibilidadPrueba" name="visibilidad_prueba[{$prueba.codigo}]" value="{$prueba.visible}" {if $prueba.visible eq 't'}checked="checked" {/if}/></td>
           <td>{if $prueba.tipo neq $smarty.const.I_TIPO_SIMULACRO}<input type="checkbox" class="chk-pruebaEditable" name="editable_prueba[{$prueba.codigo}]" value="{$prueba.editable}" {if $prueba.editable eq 't'}checked="checked" {/if}/>{/if}</td>
@@ -34,7 +36,7 @@
 					{if $prueba.tipo eq $smarty.const.I_TIPO_SIMULACRO}
 					<a href="#{$prueba.codigo}" class="link-procesarPrueba"><span class="ui-icon ui-icon-play link-icon inline-icon"></span> Procesar</a>
 					{/if}
-          <input type="hidden" value="{$prueba.codigo}"/>
+         
 					</td>
 				</tr>
 			{/foreach}

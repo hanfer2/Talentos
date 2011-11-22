@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-07-06 16:54:06
+<?php /* Smarty version 2.6.26, created on 2011-11-01 15:00:38
          compiled from templates/_public/header.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'link_to', 'templates/_public/header.tpl', 26, false),array('modifier', 'user_logged_info', 'templates/_public/header.tpl', 26, false),)), $this); ?>
@@ -6,7 +6,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'link_to', '
   <div id='logoTalentos-wrapper' class="<?php if (is_user_login ( )): ?>panel-logged<?php else: ?>panel-unlogged<?php endif; ?>">
     <div class='logo' id='logoUV'>
       <a href = "http://www.univalle.edu.co" >
-      <img src="http://talentos.univalle.edu.co/templates/Talentos2/imagenes/Univalle.png" alt="Universidad del Valle"/>
+      <img src="Univalle.png" alt="Universidad del Valle"/>
       </a>
     </div>
     <div id="container-tituloSIAT">
@@ -19,8 +19,8 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'link_to', '
 				<area shape="rect" coords="56,50,133,110" href="http://www.cali.gov.co/" target="_blank" title="Portal Alcald&iacute;a Santiago de Cali" alt="Portal Alcaldía"/> 
 				<area shape="rect" coords="134,0,280,110" href="http://talentos.univalle.edu.co/" target="_top" title="Portal Talentos" alt="Portal Talentos"/> 
 			</map>
-      <a>
-      	<img src='http://talentos.univalle.edu.co/templates/Talentos2/imagenes/Logos.png'  height="80" alt='Logo Talentos' usemap="logos_talentos"/>
+      <a href = "http://talentos.univalle.edu.co">
+      	<img src='talentos.png'  height="80" alt='Logo Talentos' usemap="logos_talentos"/>
       </a>
     </div>
   </div>

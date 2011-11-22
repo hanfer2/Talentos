@@ -173,10 +173,13 @@
         $this->subgrupos[$curso['cod_grupo']] = $curso['grupo'];
       }
     }
-
+/*aca hay errorees*/
     function	resumir() {
-
-      $grupos	=	TGrupo::all(ITipo::programa($this->cod_prueba));
+//echo "prueba ".$this->cod_prueba." programa es ".ITipo::programa($this->cod_prueba)."<br/>";
+      $grupos	=	TGrupo::all2(ITipo::programa($this->cod_prueba));
+      
+     // echo "grupos no cargan son"."<br/>";
+     // print_r($grupos);
       $superniveles	=	Niveles_Por_Puntaje::superniveles();
       $_componentes	=	ITipo::componentes($this->cod_prueba);
       $this->totales = array('resumen'=>array(),'cant'=>array());

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-10-06 15:39:00
+<?php /* Smarty version 2.6.26, created on 2011-11-15 16:31:20
          compiled from templates/_public/header.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'link_to', 'templates/_public/header.tpl', 26, false),array('modifier', 'user_logged_info', 'templates/_public/header.tpl', 26, false),)), $this); ?>

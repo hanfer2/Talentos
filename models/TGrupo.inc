@@ -63,6 +63,12 @@ function all() {
           " WHERE cod_programa = '$cod_programa' ORDER BY grupo";
       return DB::query($sql);
     }
+    
+ function all2($codigoPrograma) {
+      $sql = "SELECT DISTINCT grupo FROM ".Config::get(__CLASS__, 'viewname').
+          " WHERE cod_programa = '$codigoPrograma' ORDER BY grupo";
+      return DB::query($sql);
+    }   
     /**
      * ???
      *
@@ -88,8 +94,14 @@ function all() {
     		$grupos[$curso['grupo']][$curso['subgrupo']] = $curso['cod_grupo'];
     	return $grupos;
     }
-  }
+  
 
+function letras($param){
+  $sql="select distinct(grupo) from a_grupos where cod_programa = '$param' order by grupo";
+  //echo $sql;
+   return DB::query($sql);
+  }
+}
   /**
    * Se incluye la Clase TCurso
    */

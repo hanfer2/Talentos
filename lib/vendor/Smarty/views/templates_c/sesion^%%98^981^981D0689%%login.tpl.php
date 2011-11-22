@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-06-30 12:18:48
+<?php /* Smarty version 2.6.26, created on 2011-11-21 20:47:43
          compiled from templates/_layouts/login.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'include_script', 'templates/_layouts/login.tpl', 8, false),array('function', 'include_public', 'templates/_layouts/login.tpl', 18, false),)), $this); ?>

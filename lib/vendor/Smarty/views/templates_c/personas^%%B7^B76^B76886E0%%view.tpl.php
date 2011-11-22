@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-10-10 16:31:35
+<?php /* Smarty version 2.6.26, created on 2011-11-21 20:45:46
          compiled from modules/estudiantes_notificaciones/templates/view.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'include_partial', 'modules/estudiantes_notificaciones/templates/view.tpl', 15, false),)), $this); ?>

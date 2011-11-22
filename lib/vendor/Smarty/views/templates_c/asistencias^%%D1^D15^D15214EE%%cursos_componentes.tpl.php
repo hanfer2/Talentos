@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-09-07 10:59:20
+<?php /* Smarty version 2.6.26, created on 2011-11-16 16:37:14
          compiled from templates/_shared/cursos_componentes.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'camelize', 'templates/_shared/cursos_componentes.tpl', 3, false),array('function', 'to_sql', 'templates/_shared/cursos_componentes.tpl', 6, false),array('function', 'html_select', 'templates/_shared/cursos_componentes.tpl', 7, false),)), $this); ?>

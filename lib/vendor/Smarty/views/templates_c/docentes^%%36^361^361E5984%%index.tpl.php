@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-07-06 16:41:08
+<?php /* Smarty version 2.6.26, created on 2011-11-15 16:31:20
          compiled from ./modules/docentes/templates//index.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'include_template', './modules/docentes/templates//index.tpl', 6, false),array('function', 'link_to', './modules/docentes/templates//index.tpl', 9, false),array('function', 'persona_url', './modules/docentes/templates//index.tpl', 31, false),array('modifier', 'escape', './modules/docentes/templates//index.tpl', 32, false),array('modifier', 'lower', './modules/docentes/templates//index.tpl', 37, false),array('modifier', 'date_format', './modules/docentes/templates//index.tpl', 39, false),)), $this); ?>

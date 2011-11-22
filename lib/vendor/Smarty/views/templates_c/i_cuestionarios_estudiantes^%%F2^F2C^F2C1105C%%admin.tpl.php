@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.26, created on 2011-10-06 14:16:22
+<?php /* Smarty version 2.6.26, created on 2011-11-17 21:39:41
          compiled from templates/_public/pages/menu/admin.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'link_to', 'templates/_public/pages/menu/admin.tpl', 5, false),array('function', 'url_for', 'templates/_public/pages/menu/admin.tpl', 142, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'link_to', 'templates/_public/pages/menu/admin.tpl', 5, false),array('function', 'url_for', 'templates/_public/pages/menu/admin.tpl', 145, false),)), $this); ?>
 <!-- MENU ESTUDIANTES -->
 <li><a href="javascript:void(0)" class="jm-submenu">Participantes</a>
   <ul>
@@ -149,6 +149,10 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'link_to', '
 </li>
             <li><?php echo smarty_function_link_to(array('name' => 'Revisar Cuestionarios','controller' => 'i_cuestionarios','action' => 'check','disabled' => 'disabled'), $this);?>
 </li>
+             <li><?php echo smarty_function_link_to(array('name' => 'prueba para notas','controller' => 'i_cuestionarios_estudiantes','action' => 'prueba'), $this);?>
+</li>
+            <li><?php echo smarty_function_link_to(array('name' => 'Calcular prueba actual','controller' => 'i_cuestionarios','action' => 'calcular'), $this);?>
+</li>
           </ul>
         </li>
         <?php endif; ?>
@@ -171,6 +175,8 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'link_to', '
     <li><?php echo smarty_function_link_to(array('name' => 'Reporte Individual','controller' => 'asistencias','action' => 'view'), $this);?>
 </li>
     <li><?php echo smarty_function_link_to(array('name' => 'Reporte por Grupo','controller' => 'asistencias','action' => 'index','cod_programa' => '003'), $this);?>
+</li>
+      <li><?php echo smarty_function_link_to(array('name' => 'Reporte por Componentes','controller' => 'asistencias','action' => 'componentes','cod_programa' => '003'), $this);?>
 </li>
     <li><?php echo smarty_function_link_to(array('name' => 'Reporte por Cursos','controller' => 'asistencias','action' => 'general','cod_curso' => ''), $this);?>
 </li>

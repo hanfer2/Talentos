@@ -74,6 +74,16 @@
         $sql.=" AND tipo = $prueba";
       return $db->fetch_array($sql, true);
     }
+    
+   function cedulas_presentaron_icfes_x_subgrupo($curso, $prueba){
+     
+  $sql="select cedula from a_persona where cod_interno IN (
+select cod_interno from a_estudiantes_grupos where cod_grupo='$curso' and cod_interno IN
+(select cod_interno from i_cuestionarios_diligenciados where cod_prueba='$prueba') )";   
+
+return DB::query($sql);
+  }
+    
 
     function horario($cedula){
     	$cod_curso = TEstudiante::curso($cedula, null, 'cod_grupo');

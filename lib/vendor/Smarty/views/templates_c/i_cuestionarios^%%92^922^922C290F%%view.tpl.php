@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.26, created on 2011-07-06 16:55:42
+<?php /* Smarty version 2.6.26, created on 2011-11-01 15:59:45
          compiled from modules/i_cuestionarios/templates/view.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'html_select', 'modules/i_cuestionarios/templates/view.tpl', 5, false),array('function', 'include_template', 'modules/i_cuestionarios/templates/view.tpl', 8, false),array('function', 'url_for', 'modules/i_cuestionarios/templates/view.tpl', 25, false),array('modifier', 'default', 'modules/i_cuestionarios/templates/view.tpl', 13, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'html_select', 'modules/i_cuestionarios/templates/view.tpl', 5, false),array('function', 'include_template', 'modules/i_cuestionarios/templates/view.tpl', 8, false),array('function', 'url_for', 'modules/i_cuestionarios/templates/view.tpl', 25, false),array('function', 'include_partial', 'modules/i_cuestionarios/templates/view.tpl', 30, false),array('modifier', 'default', 'modules/i_cuestionarios/templates/view.tpl', 13, false),)), $this); ?>
 <?php if (! isset ( $this->_tpl_vars['cod_prueba'] ) || ! isset ( $this->_tpl_vars['cod_componente'] )): ?>
 	<?php ob_start(); ?>
 		<div class="ui-field">
@@ -42,11 +42,8 @@ if ($this->_foreach['preguntas']['total'] > 0):
     foreach ($_from as $this->_tpl_vars['pregunta']):
         $this->_foreach['preguntas']['iteration']++;
 ?>
-				<?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => 'add.form.tpl', 'smarty_include_vars' => array('pregunta' => $this->_tpl_vars['pregunta'],'letras' => $this->_tpl_vars['letras'],'flag' => $this->_foreach['preguntas']['iteration'])));
-$this->_tpl_vars = $_smarty_tpl_vars;
-unset($_smarty_tpl_vars);
- ?>
+				<?php echo smarty_function_include_partial(array('file' => 'add.form.tpl','pregunta' => $this->_tpl_vars['pregunta'],'letras' => $this->_tpl_vars['letras'],'flag' => $this->_foreach['preguntas']['iteration']), $this);?>
+
 		 <?php endforeach; endif; unset($_from); ?>
 		 			<div>
 		 		<?php if (! $this->_tpl_vars['estaCalificada']): ?>

@@ -19,5 +19,7 @@
   
   $appDispatcher = new AppDispatcher();
   $appDispatcher->dispatch();
+ echo error_reporting(E_ALL); 
+ ini_set('display_errors','On');
   return false;
 ?>

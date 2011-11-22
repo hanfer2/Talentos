@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.26, created on 2011-07-06 16:48:42
+<?php /* Smarty version 2.6.26, created on 2011-11-21 21:31:26
          compiled from modules/i_pruebas/templates/index.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'include_template', 'modules/i_pruebas/templates/index.tpl', 2, false),array('function', 'url_for', 'modules/i_pruebas/templates/index.tpl', 29, false),array('function', 'html_select', 'modules/i_pruebas/templates/index.tpl', 61, false),array('modifier', 'escape', 'modules/i_pruebas/templates/index.tpl', 29, false),array('modifier', 'capitalize', 'modules/i_pruebas/templates/index.tpl', 30, false),array('modifier', 'date_format', 'modules/i_pruebas/templates/index.tpl', 30, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'include_template', 'modules/i_pruebas/templates/index.tpl', 2, false),array('function', 'url_for', 'modules/i_pruebas/templates/index.tpl', 31, false),array('function', 'html_select', 'modules/i_pruebas/templates/index.tpl', 63, false),array('modifier', 'escape', 'modules/i_pruebas/templates/index.tpl', 31, false),array('modifier', 'capitalize', 'modules/i_pruebas/templates/index.tpl', 32, false),array('modifier', 'date_format', 'modules/i_pruebas/templates/index.tpl', 32, false),)), $this); ?>
 <?php if (! isset ( $this->_tpl_vars['cod_programa'] )): ?>
 	<?php echo smarty_function_include_template(array('file' => "programa.form",'title' => 'Listado de Pruebas','action' => 'index'), $this);?>
 
@@ -30,12 +30,15 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'include_tem
         </tr>
 			</thead>
 			<tbody>
+        <!--Siempore esta tomando el codigo 10 cambie el que cambie, antes no tomaba nada-->
 			<?php $_from = $this->_tpl_vars['pruebas']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['prueba']):
 ?>
 				<tr>
+           <input type="hidden" value="<?php echo $this->_tpl_vars['prueba']['codigo']; ?>
+" id="codno"/>
 					<td><a class="nombre_prueba" href="<?php echo smarty_function_url_for(array('action' => 'view','controller' => 'icfes','cod_prueba' => $this->_tpl_vars['prueba']['codigo']), $this);?>
-"><?php echo ((is_array($_tmp=$this->_tpl_vars['prueba']['nombre'])) ? $this->_run_mod_handler('escape', true, $_tmp) : smarty_modifier_escape($_tmp)); ?>
+" id="elcodigo"><?php echo ((is_array($_tmp=$this->_tpl_vars['prueba']['nombre'])) ? $this->_run_mod_handler('escape', true, $_tmp) : smarty_modifier_escape($_tmp)); ?>
 </a></td>
 					<td><?php echo ((is_array($_tmp=$this->_tpl_vars['prueba']['tipo'])) ? $this->_run_mod_handler('capitalize', true, $_tmp) : smarty_modifier_capitalize($_tmp)); ?>
 </td><td><?php echo ((is_array($_tmp=$this->_tpl_vars['prueba']['fecha'])) ? $this->_run_mod_handler('date_format', true, $_tmp) : smarty_modifier_date_format($_tmp)); ?>
@@ -51,8 +54,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'include_tem
 					<a href="#<?php echo $this->_tpl_vars['prueba']['codigo']; ?>
 " class="link-procesarPrueba"><span class="ui-icon ui-icon-play link-icon inline-icon"></span> Procesar</a>
 					<?php endif; ?>
-          <input type="hidden" value="<?php echo $this->_tpl_vars['prueba']['codigo']; ?>
-"/>
+         
 					</td>
 				</tr>
 			<?php endforeach; endif; unset($_from); ?>

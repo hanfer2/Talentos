@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-07-12 09:30:45
+<?php /* Smarty version 2.6.26, created on 2011-11-02 16:21:31
          compiled from modules/i_competencias_estudiantes/templates/reporte_por_curso.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'array_keys', 'modules/i_competencias_estudiantes/templates/reporte_por_curso.tpl', 15, false),array('modifier', 'escape', 'modules/i_competencias_estudiantes/templates/reporte_por_curso.tpl', 16, false),array('modifier', 'capitalize', 'modules/i_competencias_estudiantes/templates/reporte_por_curso.tpl', 16, false),array('modifier', 'ucfirst', 'modules/i_competencias_estudiantes/templates/reporte_por_curso.tpl', 24, false),array('modifier', 'string_format', 'modules/i_competencias_estudiantes/templates/reporte_por_curso.tpl', 41, false),array('function', 'persona_url', 'modules/i_competencias_estudiantes/templates/reporte_por_curso.tpl', 36, false),array('function', 'link_to', 'modules/i_competencias_estudiantes/templates/reporte_por_curso.tpl', 37, false),)), $this); ?>

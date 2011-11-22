@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-09-16 17:19:15
+<?php /* Smarty version 2.6.26, created on 2011-11-21 21:43:04
          compiled from ./modules/icfes/templates//reporteIndividual.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'include_template', './modules/icfes/templates//reporteIndividual.tpl', 2, false),array('function', 'persona_url', './modules/icfes/templates//reporteIndividual.tpl', 11, false),array('function', 'info', './modules/icfes/templates//reporteIndividual.tpl', 37, false),array('function', 'url_for', './modules/icfes/templates//reporteIndividual.tpl', 51, false),array('modifier', 'array_item', './modules/icfes/templates//reporteIndividual.tpl', 18, false),array('modifier', 'escape', './modules/icfes/templates//reporteIndividual.tpl', 20, false),array('modifier', 'date_format', './modules/icfes/templates//reporteIndividual.tpl', 21, false),array('modifier', 'lower', './modules/icfes/templates//reporteIndividual.tpl', 39, false),array('modifier', 'default', './modules/icfes/templates//reporteIndividual.tpl', 40, false),)), $this); ?>

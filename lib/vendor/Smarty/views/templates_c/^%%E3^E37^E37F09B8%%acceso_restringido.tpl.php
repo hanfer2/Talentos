@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-07-25 09:52:38
+<?php /* Smarty version 2.6.26, created on 2011-11-17 22:17:24
          compiled from ./templates/_public//pages/acceso_restringido.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'html_image', './templates/_public//pages/acceso_restringido.tpl', 3, false),array('function', 'link_to', './templates/_public//pages/acceso_restringido.tpl', 7, false),)), $this); ?>

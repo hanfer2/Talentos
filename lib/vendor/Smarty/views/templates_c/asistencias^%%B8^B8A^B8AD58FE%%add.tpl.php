@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-09-20 16:33:56
+<?php /* Smarty version 2.6.26, created on 2011-11-01 14:54:31
          compiled from modules/programas/templates/add.tpl */ ?>
 <div class="ui-form boxed hidden " id="form-registrarNuevoPrograma">
   <h2>Registrar Nuevo <?php echo $this->_config[0]['vars']['PNAT']; ?>

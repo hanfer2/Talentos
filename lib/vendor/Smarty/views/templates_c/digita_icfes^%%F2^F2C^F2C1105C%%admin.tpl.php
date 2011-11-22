@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.26, created on 2011-07-06 16:54:06
+<?php /* Smarty version 2.6.26, created on 2011-11-01 15:00:38
          compiled from templates/_public/pages/menu/admin.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'link_to', 'templates/_public/pages/menu/admin.tpl', 5, false),array('function', 'url_for', 'templates/_public/pages/menu/admin.tpl', 141, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'link_to', 'templates/_public/pages/menu/admin.tpl', 5, false),array('function', 'url_for', 'templates/_public/pages/menu/admin.tpl', 143, false),)), $this); ?>
 <!-- MENU ESTUDIANTES -->
 <li><a href="javascript:void(0)" class="jm-submenu">Participantes</a>
   <ul>
@@ -169,6 +169,10 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'link_to', '
     <?php endif; ?>
     <li><span class="jm-title">Reportes</span></li>
     <li><?php echo smarty_function_link_to(array('name' => 'Reporte Individual','controller' => 'asistencias','action' => 'view'), $this);?>
+</li>
+    <li><?php echo smarty_function_link_to(array('name' => 'Reporte por Grupo','controller' => 'asistencias','action' => 'index','cod_programa' => '003'), $this);?>
+</li>
+      <li><?php echo smarty_function_link_to(array('name' => 'Reporte por Componentes','controller' => 'asistencias','action' => 'componentes','cod_programa' => '003'), $this);?>
 </li>
     <li><?php echo smarty_function_link_to(array('name' => 'Reporte por Cursos','controller' => 'asistencias','action' => 'general','cod_curso' => ''), $this);?>
 </li>

@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.26, created on 2011-10-31 16:23:20
+<?php /* Smarty version 2.6.26, created on 2011-11-01 14:58:53
          compiled from ./modules/asistencias/templates//index.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'link_to', './modules/asistencias/templates//index.tpl', 43, false),array('function', 'include_partial', './modules/asistencias/templates//index.tpl', 61, false),array('modifier', 'default', './modules/asistencias/templates//index.tpl', 44, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'link_to', './modules/asistencias/templates//index.tpl', 43, false),array('function', 'include_partial', './modules/asistencias/templates//index.tpl', 62, false),array('modifier', 'default', './modules/asistencias/templates//index.tpl', 44, false),array('modifier', 'date_format', './modules/asistencias/templates//index.tpl', 58, false),)), $this); ?>
 <!-- <?php ob_start(); ?>
 	<?php if (is_super_admin_login ( )): ?>-->
 	<!-- <?php endif; ?>
@@ -17,7 +17,7 @@ unset($_smarty_tpl_vars);
 <?php else: ?>
 
 <div class="ui-widget decorated">
-  <h1>Listado de Asistencias Por Grupo</h1>
+  <h1>Listado de Asistencias Por Grupo PROBEMOS A VER QIE PASA</h1>
  
   <table class='table dataTable non-paginable' id='table-inasistenciasGeneral'>
     <thead>
@@ -75,6 +75,8 @@ unset($_smarty_tpl_vars);
       <?php endforeach; endif; unset($_from); ?>
     </tbody>
   </table>
+  <div class='date-report'>Generado: <span class='date'><?php echo ((is_array($_tmp='now')) ? $this->_run_mod_handler('date_format', true, $_tmp) : smarty_modifier_date_format($_tmp)); ?>
+</span></div>
   <!--
   <div class="ui-toolbar"><?php echo $this->_tpl_vars['links']; ?>
 </div>

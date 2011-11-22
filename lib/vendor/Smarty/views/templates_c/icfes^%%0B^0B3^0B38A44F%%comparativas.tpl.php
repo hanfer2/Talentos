@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-07-06 16:44:43
+<?php /* Smarty version 2.6.26, created on 2011-11-02 15:20:29
          compiled from modules/icfes/templates/comparativas.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'include_template', 'modules/icfes/templates/comparativas.tpl', 2, false),array('modifier', 'escape', 'modules/icfes/templates/comparativas.tpl', 24, false),array('modifier', 'date_format', 'modules/icfes/templates/comparativas.tpl', 33, false),array('modifier', 'lower', 'modules/icfes/templates/comparativas.tpl', 42, false),array('modifier', 'capitalize', 'modules/icfes/templates/comparativas.tpl', 42, false),array('modifier', 'string_format', 'modules/icfes/templates/comparativas.tpl', 47, false),)), $this); ?>

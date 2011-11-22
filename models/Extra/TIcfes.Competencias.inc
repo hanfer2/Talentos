@@ -1,6 +1,6 @@
 <?php
-	include_once '../include/TEstudiante.inc';
-	include_once '../include/TGrupo.inc';
+	//require_once  'TEstudiante.inc';
+//	include_once '../include/TGrupo.inc';
 
 
 	class TIcfes_Competencias{
@@ -51,8 +51,10 @@
 		}
 
 		function calcular_todos($cod_prueba){
+   
 			$_puntajes = array();
-			$letras = TGrupo::letras();
+      $param ='003';
+			$letras = TGrupo::letras( $param);
 			foreach($letras as $letra)
 				$_puntajes[$letra] = TIcfes_Competencias::calcular_x_grupo($letra, $cod_prueba);
 			return $_puntajes;

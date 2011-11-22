@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-07-26 17:04:50
+<?php /* Smarty version 2.6.26, created on 2011-11-16 14:33:06
          compiled from ./modules/cursos/templates//view.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'nombre_programa', './modules/cursos/templates//view.tpl', 7, false),array('function', 'persona_url', './modules/cursos/templates//view.tpl', 20, false),array('function', 'link_to', './modules/cursos/templates//view.tpl', 31, false),array('modifier', 'escape', './modules/cursos/templates//view.tpl', 21, false),)), $this); ?>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-07-06 16:55:36
+<?php /* Smarty version 2.6.26, created on 2011-11-01 15:11:14
          compiled from templates/_shared/simulacros_con_cuestionario.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'camelize', 'templates/_shared/simulacros_con_cuestionario.tpl', 3, false),array('function', 'info', 'templates/_shared/simulacros_con_cuestionario.tpl', 9, false),array('function', 'html_select', 'templates/_shared/simulacros_con_cuestionario.tpl', 10, false),)), $this); ?>

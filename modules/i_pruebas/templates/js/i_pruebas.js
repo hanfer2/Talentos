@@ -31,17 +31,33 @@ App.IPruebasController = {
 					return false;
 			})//fin click
 	 }; // fin listener
-	 
+	 //aca esta el error codigo no capturado correctamente
+   
 	 addListener_chkVisibilidadPrueba = function(){
+     
 		 $(".chk-visibilidadPrueba").click(function(){
+       
 			 var _this = $(this);
-				var cod_prueba = _this.parent("tr").find(":hidden").val();
+       
+    /*  var pruebas = document.getElementById("elcodigo").href;
+     alert(pruebas);*/
+
+				var cod_prueba = _this.parents("tr").find(":hidden").val();
+            // alert(cod_prueba);
+
+        
 				var visibility = _this.is(':checked');
+        
 				var nombre_prueba = _this.parents("tr").find(".nombre_prueba").html();
+        
 				$.wDialog("show");
+        
 				$.post(url_for('edit_visibility'), {'pr':cod_prueba, 'vis': (visibility)?'t':'f'}, function(html){
+          
 					$.wDialog("close");
+          
 					var msg = "Ahora la Prueba '"+nombre_prueba+"' "+ (visibility ? "" :"NO ") +"es VISIBLE";
+          
 					$.notify(msg);
 				})
 			});// fin click chk

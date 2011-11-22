@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-07-05 14:29:48
+<?php /* Smarty version 2.6.26, created on 2011-11-21 20:45:16
          compiled from ./modules/asistencias/templates//view.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'include_template', './modules/asistencias/templates//view.tpl', 2, false),array('function', 'persona_url', './modules/asistencias/templates//view.tpl', 7, false),array('function', 'link_to', './modules/asistencias/templates//view.tpl', 9, false),array('modifier', 'escape', './modules/asistencias/templates//view.tpl', 16, false),array('modifier', 'zeropad', './modules/asistencias/templates//view.tpl', 28, false),array('modifier', 'array_item', './modules/asistencias/templates//view.tpl', 30, false),)), $this); ?>

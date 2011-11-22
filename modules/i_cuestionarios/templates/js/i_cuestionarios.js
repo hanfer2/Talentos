@@ -17,12 +17,11 @@
 	 }
 }
  
- 
-     
-
 var cod_pregunta=1;
 
 $(function(){
+  
+
 
 	cod_pregunta = $(".questions-line-field").length;
 	$("#cod_programa",".form-simulacrosSinCuestionario").change(function(){
@@ -31,7 +30,6 @@ $(function(){
 			$$("cod_prueba").html(json.toSelect())
 		})
 	})
-	
 	$("#cod_programa",".form-simulacrosConCuestionario").change(function(){
 		jQuery.getJSON(url_for('simulacros_con_cuestionario'), {'cod_programa': this.value}, function(json){
 			json = json || []
@@ -40,6 +38,15 @@ $(function(){
 	})
 	
 	$$("bt-registrarCuestionario").click(function(){
+  var id = $(this).attr('name'); 
+   
+  var total= id.substring(0,12)+"[codigo]";
+
+  var codigo= $("input[name='"+total+"']").val();
+  var caracter = codigo.indexOf("-");
+  caracter = codigo.substring(0,caracter+1)
+    $("input[name='"+total+"']").val(caracter+$("input[name='"+id+"']").val());
+
 		if($F("#cod_prueba")== ""){
 			jAlert("Debe seleccionar una prueba")
 			return false;
@@ -48,7 +55,9 @@ $(function(){
 		$.get(url_for(), $("select", "#form-registrarCuestionario").serialize(), function(html){
 			$(".ajax-response").html(html)
 			cod_pregunta = 1;
+     
 		})
+   
 	})
 	
 	$$("bt-consultarCuestionario").click(function(){
@@ -61,6 +70,7 @@ $(function(){
 					cod_pregunta = $(".questions-line-field").length;
 					$("input, select","form.bloqueado").attr("disabled", "disabled")
 				})
+  
 			}
 	})
 	$("input, select","form.bloqueado").attr("disabled", "disabled");
@@ -70,15 +80,28 @@ $(function(){
 		var zeropadded = zeroPad(cod_pregunta,3);
 		var cod_prueba = $("[name=cod_prueba]:hidden","#form-registrarCuestionario").val();
 		var question = $(".questions-line-field:last");
+   
 		var newQuestion = question.clone().insertAfter(".questions-line-field:last")
-		
+	
 		$("select, input", newQuestion).each(function(){
 				var name = this.name.replace(/preguntas\[\d{1,3}\]/, "preguntas["+cod_pregunta+"]")
+        //alert(name);
 				this.name = name;
+        	 
 		});
 		$(".pregunta-numeral", newQuestion).val(zeropadded)
 		$(".pregunta-codigo", newQuestion).val(cod_prueba+"-"+zeropadded)
 		$(".pregunta-respuesta:checkbox", newQuestion).attr("checked","")
+    $("input[id='numeral']").change(function () {
+      var id = $(this).attr('name'); 
+   
+    var total= id.substring(0,12)+"[codigo]";
+
+  var codigo= $("input[name='"+total+"']").val();
+  var caracter = codigo.indexOf("-");
+  caracter = codigo.substring(0,caracter+1)
+    $("input[name='"+total+"']").val(caracter+$("input[name='"+id+"']").val());
+})
 		return false;
 	})
 	

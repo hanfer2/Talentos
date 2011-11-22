@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-10-04 16:54:21
+<?php /* Smarty version 2.6.26, created on 2011-11-21 20:45:46
          compiled from ./modules/personas/templates//view.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'include_partial', './modules/personas/templates//view.tpl', 7, false),array('function', 'link_to', './modules/personas/templates//view.tpl', 17, false),array('function', 'info', './modules/personas/templates//view.tpl', 65, false),array('function', 'join', './modules/personas/templates//view.tpl', 178, false),array('modifier', 'escape', './modules/personas/templates//view.tpl', 64, false),array('modifier', 'default', './modules/personas/templates//view.tpl', 79, false),array('modifier', 'date_format', './modules/personas/templates//view.tpl', 103, false),array('modifier', 'string_format', './modules/personas/templates//view.tpl', 169, false),array('modifier', 'lower', './modules/personas/templates//view.tpl', 186, false),)), $this); ?>

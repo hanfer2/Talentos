@@ -1,4 +1,5 @@
 <?php
+
         /**
          * Clase ICuestionariosController extendida de Controller
          */
@@ -9,6 +10,7 @@
 	  */
 	 function __construct() {
 			parent::__construct();
+      //include_once 'TIcfes_Competencias.inc';
 			$this->includeModel('TIcfes', 'TPrograma','ICompetencia', 'ICuestionario', 'ICualitativo');
 			$this->vista->setTitle('Pruebas');
 			$this->ICuestionario = new ICuestionario();
@@ -83,6 +85,8 @@
      if($this->params['cod_prueba']){
 			 if(isset($this->params['preguntas'])){
 				$preguntas = $this->params['preguntas'];
+       // print_r ($preguntas[1]);
+        //echo "<br/>"."la numeral ".$preguntas['1']['numeral'];
 				$this->ICuestionario->registrarPreguntas($this->params['cod_prueba'], $preguntas);
 				 $this->vista->set('message', "Registro Exitoso. El cuestionario se registro con éxito");
 			 }else{
@@ -91,7 +95,7 @@
 					$this->vista->set('nombre_componente', TComponente::nombre($params['cod_componente']));
 				 $this->vista->set('cualitativos', ICualitativo::all());
 				 $this->vista->set('competencias', ICompetencia::all());
-				 $this->vista->set('pregunta', array('codigo'=>$this->params['cod_prueba']."-001"));
+				 $this->vista->set('pregunta', array('codigo'=>$this->params['cod_prueba']."-".$preguntas['1']['numeral']));
 				 $this->vista->set('respuestas', range('A','E'));
 			}
 	   }
@@ -104,6 +108,7 @@
 	  * @param array $params
 	  */
 	 function update($params){
+     
 		 if($_SERVER['REQUEST_METHOD'] =='POST' && isset($this->post['preguntas'])){
 			 $params['cod_prueba'] = $this->post['cod_prueba'];
 			 $params['cod_componente'] = $this->post['cod_componente'];
@@ -120,7 +125,7 @@
 	 */
 	function informe($params){
 		if(!is_blank($params['cod_prueba'])){
-			require_once CARPETA_MODELOS_INFORMES . "ICuestionario.inc";
+			require_once  'ICuestionario.inc';
 			$reporte = new IReporteCuestionario($params['cod_prueba']);
 			$rComponentes = $reporte->componentes();
 			$this->vista->set('reportes', $reporte);
@@ -128,11 +133,19 @@
 		}
 		$this->vista->display();
 	}
-	
-	
+ 
+	function calcular(){
+   AppLoader::load_model('TIcfes.Competencias');
+      $pruebActual='15';
+   $respuesta=TIcfes_Competencias::calcular_todos($pruebaActual);
+     $this->vista->set('pruebActual', $pruebActual);
+     $this->vista->display();
+  }
+
 	function check($params){
 		if($params['cod_prueba'] != null){
-			require_once CARPETA_MODELOS_INFORMES . "ICuestionario.inc";
+      
+			require_once 'ICuestionario.inc';
 			$reporte = new IReporteCuestionario($params['cod_prueba']);
 			//generamos un reporte de los cuestionarios (CALIFICADOS/NO CALIFICADOS)
 			$cuestionarios = $reporte->mostrarCuestionariosCalificados();
@@ -141,6 +154,6 @@
 			$this->vista->display();
 		}
 	}
-	 
+	
 }
 ?>

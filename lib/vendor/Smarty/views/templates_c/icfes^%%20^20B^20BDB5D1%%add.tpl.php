@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-07-06 16:54:16
+<?php /* Smarty version 2.6.26, created on 2011-11-01 15:00:33
          compiled from ./modules/icfes/templates//add.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'url_for', './modules/icfes/templates//add.tpl', 17, false),array('function', 'html_select', './modules/icfes/templates//add.tpl', 42, false),array('function', 'include_template', './modules/icfes/templates//add.tpl', 118, false),)), $this); ?>

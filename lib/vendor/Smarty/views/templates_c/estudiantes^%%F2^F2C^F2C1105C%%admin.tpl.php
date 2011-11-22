@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-10-20 15:55:55
+<?php /* Smarty version 2.6.26, created on 2011-11-02 15:43:40
          compiled from templates/_public/pages/menu/admin.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'link_to', 'templates/_public/pages/menu/admin.tpl', 5, false),array('function', 'url_for', 'templates/_public/pages/menu/admin.tpl', 143, false),)), $this); ?>

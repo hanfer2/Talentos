@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-09-15 09:05:02
+<?php /* Smarty version 2.6.26, created on 2011-11-02 16:21:58
          compiled from modules/i_cualitativos_estudiantes/templates/reporte_por_curso.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'modules/i_cualitativos_estudiantes/templates/reporte_por_curso.tpl', 16, false),array('modifier', 'capitalize', 'modules/i_cualitativos_estudiantes/templates/reporte_por_curso.tpl', 16, false),array('modifier', 'ucfirst', 'modules/i_cualitativos_estudiantes/templates/reporte_por_curso.tpl', 24, false),array('modifier', 'string_format', 'modules/i_cualitativos_estudiantes/templates/reporte_por_curso.tpl', 41, false),array('function', 'persona_url', 'modules/i_cualitativos_estudiantes/templates/reporte_por_curso.tpl', 36, false),array('function', 'link_to', 'modules/i_cualitativos_estudiantes/templates/reporte_por_curso.tpl', 37, false),)), $this); ?>

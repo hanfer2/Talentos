@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-09-07 10:59:41
+<?php /* Smarty version 2.6.26, created on 2011-11-16 16:37:25
          compiled from modules/asistencias/templates/clases.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'show_error', 'modules/asistencias/templates/clases.tpl', 2, false),array('modifier', 'date_format', 'modules/asistencias/templates/clases.tpl', 16, false),)), $this); ?>

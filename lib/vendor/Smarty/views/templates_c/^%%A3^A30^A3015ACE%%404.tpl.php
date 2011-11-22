@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-08-16 14:51:29
+<?php /* Smarty version 2.6.26, created on 2011-11-17 17:22:51
          compiled from ./templates/_public//pages/404.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'html_image', './templates/_public//pages/404.tpl', 3, false),)), $this); ?>
