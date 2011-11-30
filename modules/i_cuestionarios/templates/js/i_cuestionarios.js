@@ -21,8 +21,6 @@ var cod_pregunta=1;
 
 $(function(){
   
-
-
 	cod_pregunta = $(".questions-line-field").length;
 	$("#cod_programa",".form-simulacrosSinCuestionario").change(function(){
 		jQuery.getJSON(url_for('simulacros_sin_cuestionario'), {'cod_programa': this.value}, function(json){
@@ -36,7 +34,20 @@ $(function(){
 			$$("cod_prueba").html(json.toSelect())
 		})
 	})
-	
+$$("bt-registrarCuestionario").click(function(){
+		if($F("#cod_prueba")== ""){
+			jAlert("Debe seleccionar una prueba")
+			return false;
+		}
+		$(".ajax-response").ajax_img();
+		$.get(url_for(), $("select", "#form-registrarCuestionario").serialize(), function(html){
+			$(".ajax-response").html(html)
+			cod_pregunta = 1;
+		})
+	})
+
+
+/*	
 	$$("bt-registrarCuestionario").click(function(){
   var id = $(this).attr('name'); 
    
@@ -58,7 +69,7 @@ $(function(){
      
 		})
    
-	})
+	})*/
 	
 	$$("bt-consultarCuestionario").click(function(){
 			if($F("#cod_prueba") == "")

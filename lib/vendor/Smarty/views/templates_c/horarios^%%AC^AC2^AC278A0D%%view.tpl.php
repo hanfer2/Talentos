@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-07-06 16:54:30
+<?php /* Smarty version 2.6.26, created on 2011-11-30 14:11:05
          compiled from modules/horarios/templates/view.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'persona_url', 'modules/horarios/templates/view.tpl', 3, false),array('function', 'link_to', 'modules/horarios/templates/view.tpl', 6, false),array('modifier', 'escape', 'modules/horarios/templates/view.tpl', 3, false),)), $this); ?>

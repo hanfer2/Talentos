@@ -5,7 +5,8 @@
   * @return bool
   */
  function	is_xhr() {
-   return	isset($_SERVER['HTTP_X_REQUESTED_WITH'])	&&	$_SERVER['HTTP_X_REQUESTED_WITH']	==	'XMLHttpRequest';
+   //echo "is_xhr()";
+   return	isset($_SERVER['HTTP_X_REQUESTED_WITH'])	&&	($_SERVER['HTTP_X_REQUESTED_WITH']	==	'XMLHttpRequest');
  }
 
  function request_method(){

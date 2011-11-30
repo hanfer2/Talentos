@@ -218,8 +218,6 @@
       
 			$sql .= "  ORDER BY apellidos";
       
-      //echo $sql;
-      
 			return DB::query($sql);
 		}
     

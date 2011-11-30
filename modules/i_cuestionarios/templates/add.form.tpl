@@ -33,17 +33,19 @@
 </div>
 {literal}
  <script>
-
   $("input[id='numeral']").change(function () {
-   // alert("aqui");
+  
       var id = $(this).attr('name'); 
-   
-    var total= id.substring(0,12)+"[codigo]";
+   var corchete =id.indexOf("]");
+  //  alert("aqui: "+corchete);
+    var total= id.substring(0,corchete+1)+"[codigo]";
 
   var codigo= $("input[name='"+total+"']").val();
   var caracter = codigo.indexOf("-");
-  caracter = codigo.substring(0,caracter+1)
+  caracter = codigo.substring(0,caracter+1);
     $("input[name='"+total+"']").val(caracter+$("input[name='"+id+"']").val());
+    
+  //  jAlert("id : "+id+" total : "+total+" codigo : "+codigo+" caracter : "+caracter+" lo que hace al fin es"+caracter+$("input[name='"+id+"']").val());
 })
 
 </script>

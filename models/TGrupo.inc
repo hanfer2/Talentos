@@ -98,7 +98,6 @@ function all() {
 
 function letras($param){
   $sql="select distinct(grupo) from a_grupos where cod_programa = '$param' order by grupo";
-  //echo $sql;
    return DB::query($sql);
   }
 }

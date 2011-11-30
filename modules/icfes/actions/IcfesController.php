@@ -23,8 +23,11 @@
 	  * Muestra segun el programa
 	  */
 	 function icfes_segun_programa() {
+     //print_r($this->ITipo->toSQL($this->params['cod_programa']));
+     
 		 $pruebas = DB::table_query($this->ITipo->toSQL($this->params['cod_programa']));
-		 echo JSON::encode($pruebas);
+     //print_r ($pruebas);
+		echo JSON::encode($pruebas);
 	 }
 
          /**
@@ -54,14 +57,14 @@
 				 
 			 $cod_curso = TEstudiante::curso($usuario,null,'cod_grupo');
 			 
-			$pruebas = null;
+			$pruebas1 = null;
 			 
 			 $options = array();
 			 if (!is_blank($cedula) ) {
          
 				 if(!is_super_admin_login() )
 					 $options['VISIBLE'] = TRUE;
-				 $pruebas = $this->EstudianteIcfes->all($usuario,	 1);
+				 $pruebas1 = $this->EstudianteIcfes->all($usuario,	 1);
        // print_r($cedula);
         //print_r($usuario);
        // print_r($options);
@@ -77,7 +80,7 @@
 			 $info_pruebas = $this->ITipo->all($cod_programa);
        //print_r($info_pruebas);
 			 $this->vista->set('cod_curso', $cod_curso);
-			 $this->vista->set(array('componentes' => $componentes, 'pruebas' => $pruebas));
+			 $this->vista->set(array('componentes' => $componentes, 'pruebas' => $pruebas1));
 			 
        
        $simulacros = $this->ITipo->cod_pruebas_simulacros($cod_programa, array('select'=>'codigo'));

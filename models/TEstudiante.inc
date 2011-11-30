@@ -76,16 +76,19 @@
     }
     
    function cedulas_presentaron_icfes_x_subgrupo($curso, $prueba){
-     
+   /*  
   $sql="select cedula from a_persona where cod_interno IN (
 select cod_interno from a_estudiantes_grupos where cod_grupo='$curso' and cod_interno IN
 (select cod_interno from i_cuestionarios_diligenciados where cod_prueba='$prueba') )";   
+*/
+$sql="select  cedula from a_persona where cod_interno IN (select cod_interno from i_cuestionarios_diligenciados where cod_prueba='$prueba')";
 
 return DB::query($sql);
   }
     
 
     function horario($cedula){
+      echo "mm";
     	$cod_curso = TEstudiante::curso($cedula, null, 'cod_grupo');
     	return TSubgrupo::horarioSemanal($cod_curso);
     }
@@ -210,12 +213,13 @@ return DB::query($sql);
 			$cod_programa = q($cod_programa);
 			if(is_blank($cod_programa) || is_blank($status))
 				return null;
-			$sql = "SELECT v.cedula, cod_estud, apellidos, nombres, fullname, telefono, tel_celular, direccion, email, email_2,".
+			$sql = "SELECT v.cedula, cod_estud, apellidos, nombres, fullname, telefono, tel_celular, direccion, r.nombre ,email, email_2,".
 								"comuna, edad(fecha_nacimiento) AS edad, Estado.nombre as nombre_estado, nombre_grupo, cod_grupo ".
 						 "FROM ".$this->Config->Get('TEstudiante','TGrupo'). " v JOIN ".$this->Config->Get("TEstado") ." Estado ON (Estado.codigo = v.cod_estado) ".
-								" JOIN ". $this->Config->Get('TPersona') . " p using (cod_interno) ".
-						 "WHERE cod_programa = '$cod_programa' AND v.cod_estado IN ($status) ".
+								" JOIN ". $this->Config->Get('TPersona') . " p using (cod_interno), rg_barrios r ".
+						 "WHERE cod_programa = '$cod_programa' AND v.cod_estado IN ($status) and barrio=r.codigo ".
 						 "ORDER BY fullname";
+            // echo $sql;
 			return $this->db->table_query($sql);
 		}
 		

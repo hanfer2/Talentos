@@ -157,10 +157,13 @@ class ICuestionariosEstudiantesController extends Controller {
 function prueba(){
   // AppLoader::load_model('Extra/IRespuestas');
 //hallar estudiantes de la prueba actualq eu ya alla llenado el simulacro con respuestas
-  $estudiantesD=ICuestionario::codigoInterno_estudiantePrueba('15');
+  $pruebaActual=DB::query("select valor from sys_configuraciones where nombre='I.COD_CUESTIONARIO_ACTUAL';");
+  
+  
+  $estudiantesD=ICuestionario::codigoInterno_estudiantePrueba($pruebaActual);
   //print_r ($estudiantesD);
-  echo "miremos si sale en esa vaina";
-  GeneraPuntaje::GeneraPuntaje('15');
+  //echo "miremos si sale en esa vaina";
+  GeneraPuntaje::GeneraPuntaje($pruebaActual);
 }
 }
 

@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.26, created on 2011-11-02 15:43:40
+<?php /* Smarty version 2.6.26, created on 2011-11-28 21:52:02
          compiled from ./modules/estudiantes/templates//index.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'info', './modules/estudiantes/templates//index.tpl', 9, false),array('function', 'html_select', './modules/estudiantes/templates//index.tpl', 10, false),array('function', 'link_open_external', './modules/estudiantes/templates//index.tpl', 28, false),array('function', 'nombre_programa', './modules/estudiantes/templates//index.tpl', 30, false),array('function', 'link_to', './modules/estudiantes/templates//index.tpl', 41, false),array('function', 'persona_url', './modules/estudiantes/templates//index.tpl', 61, false),array('function', 'join', './modules/estudiantes/templates//index.tpl', 65, false),array('modifier', 'current', './modules/estudiantes/templates//index.tpl', 32, false),array('modifier', 'escape', './modules/estudiantes/templates//index.tpl', 63, false),array('modifier', 'lower', './modules/estudiantes/templates//index.tpl', 66, false),array('modifier', 'string_format', './modules/estudiantes/templates//index.tpl', 69, false),array('modifier', 'implode', './modules/estudiantes/templates//index.tpl', 85, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'info', './modules/estudiantes/templates//index.tpl', 9, false),array('function', 'html_select', './modules/estudiantes/templates//index.tpl', 10, false),array('function', 'link_open_external', './modules/estudiantes/templates//index.tpl', 28, false),array('function', 'nombre_programa', './modules/estudiantes/templates//index.tpl', 30, false),array('function', 'link_to', './modules/estudiantes/templates//index.tpl', 41, false),array('function', 'persona_url', './modules/estudiantes/templates//index.tpl', 61, false),array('function', 'join', './modules/estudiantes/templates//index.tpl', 65, false),array('modifier', 'current', './modules/estudiantes/templates//index.tpl', 32, false),array('modifier', 'escape', './modules/estudiantes/templates//index.tpl', 63, false),array('modifier', 'lower', './modules/estudiantes/templates//index.tpl', 66, false),array('modifier', 'string_format', './modules/estudiantes/templates//index.tpl', 70, false),array('modifier', 'implode', './modules/estudiantes/templates//index.tpl', 86, false),)), $this); ?>
 <?php if (! isset ( $this->_tpl_vars['cod_programa'] )): ?>
 	
 	<div class="ui-widget decorated non-printable">
@@ -61,7 +61,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'info', './m
       <tr>
 				<th>Doc. Id</th><th>C&oacute;digo</th>
 				<th>Apellidos</th><th>Nombres</th>
-				<th>Tel&eacute;fonos</th><th>E-mail</th><th>Direccion</th>
+				<th>Tel&eacute;fonos</th><th>E-mail</th><th>Direccion</th><th>Barrio</th>
 				<th class='column-default-hidden'>Edad</th><th>Comuna</th>
 				<th class='column-select-filter'>Estado</th>
 				<th class='column-select-filter'>Curso</th>
@@ -89,6 +89,8 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'info', './m
         <td><?php echo smarty_function_join(array('parts' => ((is_array($_tmp=((is_array($_tmp=($this->_tpl_vars['estudiante']['email']).";".($this->_tpl_vars['estudiante']['email_2']))) ? $this->_run_mod_handler('escape', true, $_tmp) : smarty_modifier_escape($_tmp)))) ? $this->_run_mod_handler('lower', true, $_tmp) : smarty_modifier_lower($_tmp)),'sep' => ', '), $this);?>
 </td>
         <td><?php echo $this->_tpl_vars['estudiante']['direccion']; ?>
+</td>
+      <td><?php echo $this->_tpl_vars['estudiante']['nombre']; ?>
 </td>
         <td><?php echo $this->_tpl_vars['estudiante']['edad']; ?>
 </td>

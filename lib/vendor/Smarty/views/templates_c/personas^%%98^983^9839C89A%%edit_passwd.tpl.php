@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-11-21 20:45:46
+<?php /* Smarty version 2.6.26, created on 2011-11-30 14:10:38
          compiled from modules/personas/templates/edit_passwd.tpl */ ?>
 <div class='ui-form' id='form-edit_passwd'>
 	<h2>Actualizar Contrase&ntilde;a</h2>

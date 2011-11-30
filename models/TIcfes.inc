@@ -236,11 +236,10 @@ function llamarConsultarUnico($sql){
    
    //LISTADO DE CEDULAS DE ESTUDIANTES DE UN CURSO QUE PRESENTARON UNA DETERMINADA PRUEBA.
 		function estudiantesConIcfes($cod_curso, $cod_prueba) {
-     // echo "entra";
+   
 			$sql = "SELECT cedula FROM " . Config::get('TEstudiante', 'TGrupo') .
 						 " WHERE cod_grupo = '$cod_curso' AND cod_interno IN (
 								SELECT cod_interno FROM " . Config::get(__CLASS__) . " where tipo = '$cod_prueba')";
-              //echo $sql;
 			return DB::aquery($sql);
 		}
     

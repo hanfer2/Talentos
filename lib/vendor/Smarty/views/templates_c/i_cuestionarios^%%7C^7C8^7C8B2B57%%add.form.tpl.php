@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-11-11 15:14:12
+<?php /* Smarty version 2.6.26, created on 2011-11-25 21:45:34
          compiled from modules/i_cuestionarios/templates/add.form.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', 'modules/i_cuestionarios/templates/add.form.tpl', 5, false),array('modifier', 'zeropad', 'modules/i_cuestionarios/templates/add.form.tpl', 5, false),array('modifier', 'explode', 'modules/i_cuestionarios/templates/add.form.tpl', 21, false),array('function', 'html_select', 'modules/i_cuestionarios/templates/add.form.tpl', 9, false),)), $this); ?>
@@ -50,17 +50,19 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', '
 </div>
 <?php echo '
  <script>
-
   $("input[id=\'numeral\']").change(function () {
-   // alert("aqui");
+  
       var id = $(this).attr(\'name\'); 
-   
-    var total= id.substring(0,12)+"[codigo]";
+   var corchete =id.indexOf("]");
+  //  alert("aqui: "+corchete);
+    var total= id.substring(0,corchete+1)+"[codigo]";
 
   var codigo= $("input[name=\'"+total+"\']").val();
   var caracter = codigo.indexOf("-");
-  caracter = codigo.substring(0,caracter+1)
+  caracter = codigo.substring(0,caracter+1);
     $("input[name=\'"+total+"\']").val(caracter+$("input[name=\'"+id+"\']").val());
+    
+  //  jAlert("id : "+id+" total : "+total+" codigo : "+codigo+" caracter : "+caracter+" lo que hace al fin es"+caracter+$("input[name=\'"+id+"\']").val());
 })
 
 </script>

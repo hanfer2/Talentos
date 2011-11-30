@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.26, created on 2011-11-01 15:26:42
+<?php /* Smarty version 2.6.26, created on 2011-11-23 16:10:41
          compiled from modules/i_cuestionarios/templates/add.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'include_template', 'modules/i_cuestionarios/templates/add.tpl', 2, false),array('function', 'url_for', 'modules/i_cuestionarios/templates/add.tpl', 10, false),array('function', 'include_partial', 'modules/i_cuestionarios/templates/add.tpl', 11, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'include_template', 'modules/i_cuestionarios/templates/add.tpl', 2, false),array('function', 'url_for', 'modules/i_cuestionarios/templates/add.tpl', 10, false),array('function', 'include_partial', 'modules/i_cuestionarios/templates/add.tpl', 11, false),array('modifier', 'date_format', 'modules/i_cuestionarios/templates/add.tpl', 20, false),array('modifier', 'escape', 'modules/i_cuestionarios/templates/add.tpl', 20, false),)), $this); ?>
 <?php if (! isset ( $this->_tpl_vars['cod_prueba'] )): ?>
 	<?php echo smarty_function_include_template(array('file' => 'simulacros_sin_cuestionario','title' => 'Registrar Cuestionario'), $this);?>
 
@@ -27,6 +27,8 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'include_tem
 			<div class='ui-button-bar'>
 				<button id="submit-registrarCuestionario">Aceptar</button>
 			</div>
+      <div class="date date-report">Realizado: <?php echo ((is_array($_tmp=((is_array($_tmp='now')) ? $this->_run_mod_handler('date_format', true, $_tmp, @TIMESTAMP_FORMAT) : smarty_modifier_date_format($_tmp, @TIMESTAMP_FORMAT)))) ? $this->_run_mod_handler('escape', true, $_tmp) : smarty_modifier_escape($_tmp)); ?>
+</div>
 		</form>
 	</div>
 <?php endif; ?>

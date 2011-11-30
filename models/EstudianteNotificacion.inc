@@ -25,7 +25,7 @@
     
     function por_grupo($grupo){
       $sql = "SELECT * FROM " . $this->Config->Get('Notificacion') ." t JOIN " . $this->Config->get(__CLASS__, 'Grupo') . " ON cod_mensaje = t.codigo WHERE cod_grupo = '$grupo'";
-      echo $sql;
+     // echo $sql;
       return $this->db->table_query($sql);
     }
     

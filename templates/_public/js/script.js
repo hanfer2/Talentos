@@ -50,8 +50,8 @@ function setup(){
   			 											"Por favor, Intente recargando la página!.\n</p>";
   			break;  			
   		case 200:
-				errorMessage.title = "Error Desconocido /";
-				errorMessage.text = "<p class='ui-state-error'>"+exception.toString().substr(0, 80)+"...</p>"
+				errorMessage.title = "Error Desconocido /oh no";
+				errorMessage.text = "<p class='ui-state-error'>"+exception.toString().substr(0, exception.toString().length)+"...</p>"
 				break;
   		default:
 	  		errorMessage.title ="Error Desconocido";

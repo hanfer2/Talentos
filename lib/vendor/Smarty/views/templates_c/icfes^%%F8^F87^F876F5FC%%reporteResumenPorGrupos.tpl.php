@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-11-21 21:19:00
+<?php /* Smarty version 2.6.26, created on 2011-11-29 15:01:56
          compiled from modules/icfes/templates/reporteResumenPorGrupos.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'nombre_programa', 'modules/icfes/templates/reporteResumenPorGrupos.tpl', 6, false),array('function', 'link_to', 'modules/icfes/templates/reporteResumenPorGrupos.tpl', 34, false),array('modifier', 'upper', 'modules/icfes/templates/reporteResumenPorGrupos.tpl', 27, false),array('modifier', 'truncate', 'modules/icfes/templates/reporteResumenPorGrupos.tpl', 27, false),array('modifier', 'escape', 'modules/icfes/templates/reporteResumenPorGrupos.tpl', 27, false),array('modifier', 'zeropad', 'modules/icfes/templates/reporteResumenPorGrupos.tpl', 35, false),array('modifier', 'cat', 'modules/icfes/templates/reporteResumenPorGrupos.tpl', 35, false),array('modifier', 'string_format', 'modules/icfes/templates/reporteResumenPorGrupos.tpl', 38, false),array('modifier', 'default', 'modules/icfes/templates/reporteResumenPorGrupos.tpl', 65, false),)), $this); ?>
@@ -143,14 +143,13 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'nombre_prog
 			</table>
       <div class='chart-container' id='chart-i_promedios-resumen-consolidado'>
       </div>
-      
+       <?php echo '
       <script type="text/javascript">
-        var nombre_programa = '<?php echo $this->_tpl_vars['nombre_programa']; ?>
-';
-        var nombre_prueba = '<?php echo $this->_tpl_vars['nombre_prueba']; ?>
-';
+        var nombre_programa = \'{$nombre_programa}\';
+        var nombre_prueba = \'{$nombre_prueba}\';
       </script>
-      
+      '; ?>
+
 		</div>
   </div>
   <?php endif; ?>

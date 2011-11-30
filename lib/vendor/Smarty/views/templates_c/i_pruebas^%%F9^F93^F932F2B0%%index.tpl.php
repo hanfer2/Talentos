@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-11-21 21:31:26
+<?php /* Smarty version 2.6.26, created on 2011-11-04 14:37:13
          compiled from modules/i_pruebas/templates/index.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'include_template', 'modules/i_pruebas/templates/index.tpl', 2, false),array('function', 'url_for', 'modules/i_pruebas/templates/index.tpl', 31, false),array('function', 'html_select', 'modules/i_pruebas/templates/index.tpl', 63, false),array('modifier', 'escape', 'modules/i_pruebas/templates/index.tpl', 31, false),array('modifier', 'capitalize', 'modules/i_pruebas/templates/index.tpl', 32, false),array('modifier', 'date_format', 'modules/i_pruebas/templates/index.tpl', 32, false),)), $this); ?>

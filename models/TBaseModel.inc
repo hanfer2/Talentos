@@ -48,7 +48,7 @@
 			}
 			$options['select'] = (!isset($options['select'])) ? '*' : join(',', arrayize($options['select']));
 			$options['from'] = any($options['from'], $tablename);
-     // echo $tablename." , ";
+  
 			$sql = sprintfn("SELECT %(select)s FROM %(from)s ", $options);
 			if (!empty($options['join']))
 				$sql .= " INNER JOIN {$options['join']} ";

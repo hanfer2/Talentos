@@ -170,7 +170,7 @@ function  nombre($param) {
     
     
 function  allMotivoNoJustificadas($codNoJustificadas) {
-       // echo "<br>".$grupo."  consulta";
+      
      $sql = "select count(asiste) as inasistencia, asiste, nombre_componente, count(cod_motivo) as Nojustificada, cod_motivo
 from cu_asistencias, (select cod_componente, nombre_componente from v_componentes_programas 
                       where semestre='1' and cod_programa='003') as componente 
@@ -381,7 +381,7 @@ return DB::query($sql);
 					$sql = sql_update_from_array(Config::get(__CLASS__), $data, "codigo = '${data['codigo']}'");
 				else
 					$sql = sql_insert_from_array(Config::get(__CLASS__), $data);
-         // echo("<br>".$sql);
+   
 				$db->query($sql);
 			}
 			return !$db->hasError();
@@ -480,7 +480,7 @@ return DB::query($sql);
 		}
 		
 		function nClasesAsistidas($filtro){
-      //echo Config::get(__CLASS__, 'R-ClasesAsistidas')." ".Config::Get('TEstudiante','TGrupo');
+      
 			$sql = " SELECT cedula, n_asistencias ".
 						 " FROM ".Config::get(__CLASS__, 'R-ClasesAsistidas')." JOIN ".Config::Get('TEstudiante','TGrupo'). " USING(cod_interno) ";
 			if(isset($filtro['cod_programa'])){
@@ -488,7 +488,7 @@ return DB::query($sql);
 				$sql .= " WHERE cod_programa = '$cod_programa'";
 			}elseif(isset($filtro['cod_curso'])){
 				$cod_curso = q($filtro['cod_curso']);
-        //echo $cod_curso." ".$cod_programa;
+     
 				$sql .= " WHERE cod_grupo = '$cod_curso'";
 			}
 			return DB::table_query($sql,'cedula');

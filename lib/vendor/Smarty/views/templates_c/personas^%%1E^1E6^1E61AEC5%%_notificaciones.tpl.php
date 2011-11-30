@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-11-21 20:45:46
+<?php /* Smarty version 2.6.26, created on 2011-11-30 14:10:38
          compiled from modules/estudiantes_notificaciones/templates/_notificaciones.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'modules/estudiantes_notificaciones/templates/_notificaciones.tpl', 6, false),array('modifier', 'date_format', 'modules/estudiantes_notificaciones/templates/_notificaciones.tpl', 7, false),array('modifier', 'count', 'modules/estudiantes_notificaciones/templates/_notificaciones.tpl', 18, false),)), $this); ?>

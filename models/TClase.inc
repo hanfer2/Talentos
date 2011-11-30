@@ -20,7 +20,7 @@
 			$updated_by = TPersona::cod_interno(user_logged_info('cedula'));
       //print_r($updated_by);
 			$sql = sql_update_from_array(Config::get(__CLASS__), array('observaciones'=>$clase['observaciones'],'updated_at'=>  date("Y-m-d H:i:s"),'updated_by'=>$updated_by),  "codigo = '{$clase['codigo']}'");
-			//echo("actualizar".$sql);
+			
       DB::query($sql);
       return $updated_by;
 		}

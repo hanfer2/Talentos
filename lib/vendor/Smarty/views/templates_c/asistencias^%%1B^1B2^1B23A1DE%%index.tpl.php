@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-11-01 14:58:53
+<?php /* Smarty version 2.6.26, created on 2011-11-30 14:11:20
          compiled from ./modules/asistencias/templates//index.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'link_to', './modules/asistencias/templates//index.tpl', 43, false),array('function', 'include_partial', './modules/asistencias/templates//index.tpl', 62, false),array('modifier', 'default', './modules/asistencias/templates//index.tpl', 44, false),array('modifier', 'date_format', './modules/asistencias/templates//index.tpl', 58, false),)), $this); ?>
@@ -61,7 +61,8 @@ unset($_smarty_tpl_vars);
 </td>
          <td><?php echo ((is_array($_tmp=@$this->_tpl_vars['grupo']['transporte'])) ? $this->_run_mod_handler('default', true, $_tmp, 0) : smarty_modifier_default($_tmp, 0)); ?>
 </td>
-          <td class='total total-asistenciasJustificadas'></td>
+          <td class='total total-asistenciasJustificadas' name='<?php echo $this->_tpl_vars['i']++; ?>
+'></td>
          <td><?php echo ((is_array($_tmp=@$this->_tpl_vars['grupo']['nojustificada'])) ? $this->_run_mod_handler('default', true, $_tmp, 0) : smarty_modifier_default($_tmp, 0)); ?>
 </td>
           <td><?php echo ((is_array($_tmp=@$this->_tpl_vars['grupo']['trabajo'])) ? $this->_run_mod_handler('default', true, $_tmp, 0) : smarty_modifier_default($_tmp, 0)); ?>

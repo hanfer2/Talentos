@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-10-31 16:37:44
+<?php /* Smarty version 2.6.26, created on 2011-11-22 14:42:13
          compiled from ./modules/asistencias/templates//indexCursos.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', './modules/asistencias/templates//indexCursos.tpl', 45, false),array('modifier', 'date_format', './modules/asistencias/templates//indexCursos.tpl', 59, false),array('function', 'include_partial', './modules/asistencias/templates//indexCursos.tpl', 63, false),)), $this); ?>

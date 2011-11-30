@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-11-21 20:47:56
+<?php /* Smarty version 2.6.26, created on 2011-11-30 14:07:17
          compiled from ./modules/sesion/templates//index.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'html_image', './modules/sesion/templates//index.tpl', 2, false),array('function', 'include_partial', './modules/sesion/templates//index.tpl', 5, false),)), $this); ?>

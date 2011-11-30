@@ -38,7 +38,6 @@
 		
 		function delete($cod_observacion){
       
-      echo $cod_observacion;
       
 			$sql = "DELETE FROM ".Config::Get(__CLASS__)." WHERE codigo = '$cod_observacion'";
 			DB::query($sql);

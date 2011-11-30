@@ -103,12 +103,12 @@
 			</table>
       <div class='chart-container' id='chart-i_promedios-resumen-consolidado'>
       </div>
-      
+       {literal}
       <script type="text/javascript">
         var nombre_programa = '{$nombre_programa}';
         var nombre_prueba = '{$nombre_prueba}';
       </script>
-      
+      {/literal}
 		</div>
   </div>
   {/if}

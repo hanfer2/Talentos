@@ -187,7 +187,7 @@ return DB::query($sql);
 						  " WHERE cod_prueba = '$cod_prueba' AND valida IS TRUE ORDER BY cod_componente, numeral";
               
         
-     // echo $sql;
+   
               
 			return $db->table_query($sql, "nombre_componente");
 		}

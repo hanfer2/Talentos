@@ -46,7 +46,7 @@
       <tr>
 				<th>Doc. Id</th><th>C&oacute;digo</th>
 				<th>Apellidos</th><th>Nombres</th>
-				<th>Tel&eacute;fonos</th><th>E-mail</th><th>Direccion</th>
+				<th>Tel&eacute;fonos</th><th>E-mail</th><th>Direccion</th><th>Barrio</th>
 				<th class='column-default-hidden'>Edad</th><th>Comuna</th>
 				<th class='column-select-filter'>Estado</th>
 				<th class='column-select-filter'>Curso</th>
@@ -65,6 +65,7 @@
 			  <td>{join parts="`$estudiante.telefono`;`$estudiante.tel_celular`"|escape sep=', '}</td>        
         <td>{join parts="`$estudiante.email`;`$estudiante.email_2`"|escape|lower sep=', '}</td>
         <td>{$estudiante.direccion}</td>
+      <td>{$estudiante.nombre}</td>
         <td>{$estudiante.edad}</td>
  			  <td>{$estudiante.comuna|string_format:"%.0f"}</td>
         <td>{$estudiante.nombre_estado|escape}</td>

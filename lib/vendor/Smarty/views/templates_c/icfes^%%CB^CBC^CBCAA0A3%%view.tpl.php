@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2011-11-21 21:31:35
+<?php /* Smarty version 2.6.26, created on 2011-11-01 15:10:27
          compiled from ./modules/icfes/templates//view.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'nombre_programa', './modules/icfes/templates//view.tpl', 4, false),array('function', 'info', './modules/icfes/templates//view.tpl', 14, false),array('function', 'link_to', './modules/icfes/templates//view.tpl', 27, false),array('function', 'persona_url', './modules/icfes/templates//view.tpl', 62, false),array('modifier', 'count', './modules/icfes/templates//view.tpl', 37, false),array('modifier', 'upper', './modules/icfes/templates//view.tpl', 52, false),array('modifier', 'truncate', './modules/icfes/templates//view.tpl', 52, false),array('modifier', 'substr', './modules/icfes/templates//view.tpl', 64, false),array('modifier', 'string_format', './modules/icfes/templates//view.tpl', 79, false),)), $this); ?>

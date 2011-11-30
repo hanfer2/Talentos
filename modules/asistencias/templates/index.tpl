@@ -45,7 +45,7 @@
         <td>{$grupo.calamidad|default:0	}</td>
         <td>{$grupo.estudio|default:0	}</td>
          <td>{$grupo.transporte|default:0	}</td>
-          <td class='total total-asistenciasJustificadas'></td>
+          <td class='total total-asistenciasJustificadas' name='{$i++}'></td>
          <td>{$grupo.nojustificada|default:0	}</td>
           <td>{$grupo.trabajo|default:0	}</td>
            <td>{$grupo.transportemenos|default:0	}</td>
